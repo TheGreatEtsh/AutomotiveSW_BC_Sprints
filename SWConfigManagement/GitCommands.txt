@@ -1,0 +1,58 @@
+Version Control
+ Git workflow
+1- Clone 
+2- Branch for each feature
+3- Develop -> EOD
+4- Update Local Master
+5- Merge Local Master to Feature Branch
+6- Merge Feature Branch to Local Master
+7- Push Local Master to Cloud Master
+
+Git Commands
+git init project1
+initializes project 1 as a git repo
+
+git config --global user.name "UserName"
+Configures your global user name to be used to track changes 
+
+git config --global user.email "email"
+Configures your global email to be used to track changes 
+
+git add file1.c
+adds files1.c to the staged changes making it ready to commit
+
+git commit -m "first commit"
+commits the staged changes with a commit message "first commit"
+
+git restore
+to discard changes in the working directory or in the staging area (--staged)
+
+git branch branch_1
+makes a branch from master named branch_1
+
+git checkout branch_1
+Checks-out branch_1 to starting working on the branch
+
+git push/pull
+pushes/pulls changes to remote
+
+git clone <repo url>
+clone the remote repo to your local machine/repo
+
+ls 
+list items
+
+cd 
+change directory
+
+git log
+used to get the history
+
+git revert
+takes a commit number to delete the commit write escape+w+q to finish the revert
+
+git status
+used to get the status 
+
+git push --set-upstream origin BranchName
+to add a new branch to a repository
