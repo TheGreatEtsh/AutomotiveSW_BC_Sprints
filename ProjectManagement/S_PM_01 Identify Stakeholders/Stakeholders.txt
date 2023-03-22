@@ -1,7 +1,7 @@
 Stakeholders:
 1- Customer
-2- Sponser
-3- Bussinesses Owners and Managers 
+2- Sponsor
+3- Businesses Owners and Managers 
 4- Opinion Leaders
 5- Application Users
 6- Marketing team
