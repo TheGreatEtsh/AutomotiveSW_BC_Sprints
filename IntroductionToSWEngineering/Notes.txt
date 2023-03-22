@@ -1,0 +1,95 @@
+SOFTWARE ENGINEERING 
+
+SOFTWARE CHARACTERISTICS
+
+1- Operational 
+Functionality-based factors and related to 'exterior quality' of software
+
+2- Transional
+Working with different applications and platforms
+
+3- Maintainable
+Engineering-based factors relate to the 'interior quality' of the SW like modularity, documentation, and structure.
+
+Charachteristics of being operational system
+1- Correctness: Meet all the customer's specifications
+2- Usabilty: Easy to use
+3- Efficiency: Execution time, Space, RAM and CPU usage
+4- Security: For Data and Hardware
+5- Safety: Not hazardous to the environment/life
+
+Charachteristics of being Transional system
+1- Interoperability: Ability to exchange info. with other Apps..
+2- Reusability: Ability to reuse for different purposes
+3- Portability: Ability to work across all platforms
+
+Charachteristics of being Maintainable system
+1- Flexibility: Easy to change
+2- Extensibility: Easy to add features
+3- Scalability: More workload, more # of users
+4- testability
+5- Modularity
+
+
+SOFTWARE DESIGN LIFE CYCLE -SDLC-
+
+1- Waterfall model
+Requirements -> Analysis -> Design -> Coding -> Testing -> Acceptance 
+
+2- V-Model
+Such an upgrade for waterfall model 
+it's differentiated the design into three parts 
+1- System Design
+2- Architecture Design
+3- Module Design 
+
+Types of testing performed
+1- Unit testing performed on Modules Design
+2- Integration testing 
+3- System testing
+4- Acceptance testing 
+
+difference between waterfall and v-model
+in V-Model different types of testing are planned and designed before coding in parallel with Analysis and Designing stages
+
+3- Iterative Model aka. incremental, AGILE
+
+
+SOFTWARE DESIGN
+
+Design Levels
+1- Achitecture: Defines components and their relations
+2- High Level Design: Defines interactions between Components
+3- Detailed Design: Defines logical structure of each module
+
+Why Software Design?
+Enables multilple developers to work in parallel
+Smaller components are easier to maintain
+Ensures better software performance
+Desired level of abstraction can be brought in the program
+Components with high cohesion can be re-used again
+Concurrent execution can be made possible
+Ensures security objectives are met 
+
+Cohesion VS. Coupling
+
+Cohesion أنسجام: The degree of intra-dependability within elements of a module. The greater the cohesion, the better is the program design
+
+Coupling الأعتمادية: The level of inter-dependability among modules of program. It tells at what level the modules interfere and intereact with each other. The lower the coupling, the better the program
+
+Front End VS Back End
+
+Front End: Also Called "client-side", is what happens in the browser. It's everything the user sees and interacts with.
+
+Back End: Also called "server-side", happens on the server and the database. it's the machinery that works behind the scenes to power those fancy features users interact with on the client-side.
+
+Native VS. Hybird
+
+Native: Faster performance, Better user experience, Easier acces to device (GPS, Calender, ..)
+
+Hybird: Faster to market, lower development cost, less maintenance cost, also known as "Cross Platform"
+
+API
+An API is a software-to-software interface, not a user interface. With APIs, applications talk to each other without any user knowledge or inervention.
+Amazon released its API so that developers could access Amazon's product information. Using the Amazon API, a third-party website can post direct links to Amazon products with updated prices and an option to "buy now"
+

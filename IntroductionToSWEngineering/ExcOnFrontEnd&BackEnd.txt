@@ -1,0 +1,32 @@
+Design your first App Exercise on Front End vs Back End 
+Features: 
+1- login page
+2- User Password
+3- Check on the password
+4- Previous orders
+5- Promo codes that can be used by users
+6- Check on the promo code validity
+7- List of restaurants 
+8- Restaurants menus
+9- Status of restaurants (busy/available
+10- Average delivery time of a restaurant 
+11- cart items that the user selected
+12- Confirmation message after purchasing
+
+Front End:
+1- Login Page
+2- Cart items that the user selected
+3- Confirmation message after purchasing 
+
+
+Back End:
+1- User Password
+2- Check on password
+3- Previous orders
+4- Promo codes that can be used by users
+5- Check on the promo code validity
+6- List of restaurants
+7- Restaurants menus
+8- Status of restaurants (busy/available)
+9- Average delivery time of a restaurant 
+
