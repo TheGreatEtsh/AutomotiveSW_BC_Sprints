@@ -6,4 +6,3 @@ Stakeholders:
 5- Application Users
 6- Marketing team
 7- Shopping malls
-
