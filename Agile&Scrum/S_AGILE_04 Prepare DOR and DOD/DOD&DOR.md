@@ -1,4 +1,4 @@
-#Definition of Done
+# Definition of Done
 stories must be: 
 
 1- Designed 
@@ -9,7 +9,7 @@ stories must be:
 
 4- Seek that it's free of bugs 
 
-#Definition of Ready
+# Definition of Ready
 1- Requirements Accepted by Tester
 
 2- Stories are simple 
