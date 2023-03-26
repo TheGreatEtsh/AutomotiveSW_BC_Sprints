@@ -22,5 +22,7 @@ int main()
 	
 	drawBoard(board);
 	
+	updateBoard(board, 5, 'X');
+	
 	return 0;
 }

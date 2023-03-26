@@ -11,7 +11,7 @@
  *********************************************************************************************************************/
 
 
-#include "stadnardTypes.h"
+#include "standardTypes.h"
 #include <stdio.h>
 
 /**********************************************************************************************************************
@@ -20,12 +20,19 @@
 
 void drawBoard(uint8_t* board)
 {
-	uint8_t postion = 1;
+	uint8_t postion = 0;
 	
-	for (; postion < 9; postion*=3)
+	for (; postion < 9; postion+=3)
 	{
-		printf("_________\n|%c|%c|%c|\n", board[postion], board[postion + 1], board[postion + 2]);
-		postion++;
+		printf("-------------\n| %c | %c | %c |\n", board[postion], board[postion + 1], board[postion + 2]);
+		
 	}
-	printf("_________\n");
+	printf("-------------\n");
+	printf("------------------------------------------------------------------------------\n");
+}
+
+void updateBoard(uint8_t* board, uint8_t position, uint8_t value)
+{
+	board[position - 1] = value;
+	drawBoard(board);
 }
