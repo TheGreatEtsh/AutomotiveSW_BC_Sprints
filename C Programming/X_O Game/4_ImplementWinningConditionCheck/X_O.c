@@ -16,10 +16,11 @@
 #include <stdio.h>
 
 extern uint8_t board[9];
-extern uint8_t configArray [2];
- /**********************************************************************************************************************
-  *  GLOBAL FUNCTIONS
-  *********************************************************************************************************************/
+extern uint8_t configArray[2];
+extern uint8_t roundCounter;
+/**********************************************************************************************************************
+ *  GLOBAL FUNCTIONS
+ *********************************************************************************************************************/
 
 void drawBoard(uint8_t* board)
 {
@@ -36,13 +37,14 @@ void drawBoard(uint8_t* board)
 
 void updateBoard(uint8_t* board, uint8_t position, uint8_t value)
 {
-	board[position - 1] = value;
+	position--;
+	board[position] = value;
 	drawBoard(board);
 }
 
 void loadAndUpdate(uint8_t playerNumber)
 {
-	
+
 	int position = 0;
 	int actPosition = 0;
 
@@ -68,4 +70,31 @@ void loadAndUpdate(uint8_t playerNumber)
 		printf("Wrong entry\n");
 		loadAndUpdate(playerNumber);
 	}
+}
+
+void getGameState(uint8_t* gameState)
+{
+	if (roundCounter < 4)
+		*gameState = 2;
+	else if (board[0] == board[1] && board[1] == board[2] && board[0] != ' ')
+		*gameState = 0;
+	else if (board[6] == board[4] && board[4] == board[2] && board[6] != ' ')
+		*gameState = 0;
+	else if (board[0] == board[4] && board[4] == board[8] && board[0] != ' ')
+		*gameState = 0;
+	else if (board[3] == board[4] && board[4] == board[5] && board[3] != ' ')
+		*gameState = 0;
+	else if (board[6] == board[7] && board[7] == board[8] && board[6] != ' ')
+		*gameState = 0;
+	else if (board[6] == board[3] && board[3] == board[0] && board[6] != ' ')
+		*gameState = 0;
+	else if (board[7] == board[4] && board[4] == board[1] && board[7] != ' ')
+		*gameState = 0;
+	else if (board[8] == board[5] && board[5] == board[2] && board[8] != ' ')
+		*gameState = 0;
+	else if (roundCounter == 9)
+		*gameState = 1;
+	else
+		*gameState = 2;
+	
 }
