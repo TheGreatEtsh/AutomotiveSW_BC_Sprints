@@ -46,10 +46,9 @@ uint8_t getPlayerSymbol(uint8_t playerNumber, uint8_t* symbol);
 * \Sync\Async      : Synchronous
 * \Reentrancy      : Reentrant
 * \Parameters (in) : playerNumber		This will determine which player is entering symbol
-*					  symbol			pointer to the address of symbol will be modified
-* \Parameters (out): symbol			the pointer will be modify it's state after the user input his symbol
-* \Return value:   : 0 when the input symbol is not wrong and/or was not choosen before
-*					  1 when the input symbol is wrong and/or was choosen before
+*					 symbol			pointer to the address of symbol will be modified
+* \Parameters (out): configArray		Will hold the symbols for the players for the rest of the game 
+* \Return value:   : None
 *******************************************************************************/
 void setPlayerConfig(uint8_t* configArray);
 
