@@ -21,30 +21,80 @@
 #include "standardTypes.h"
 #include <stdio.h>
 
-extern uint8_t configArray;
+extern uint8_t configArray [2];
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
+
+uint8_t getPlayerSymbol(uint8_t playerNumber, uint8_t* symbol)
+{
+	uint8_t returnValue = 0;
+	
+	if (playerNumber == 1)
+	{
+		printf("Player 1 please enter your prefered symbol X or O\n");
+		scanf("%s", symbol);
+		
+		if (*symbol == configArray[0] || *symbol == configArray[1] )
+		{
+			printf("Symbol is choosen\n");
+			returnValue = 1;
+		}
+		else if (*symbol == 'X' || *symbol == 'O')
+		{
+			printf("Entery is successful\n");
+			returnValue = 0;
+		}
+		else
+		{
+			printf("Entery is wrong\n");
+			returnValue = 1;
+		}
+	}
+
+	if (playerNumber == 2)
+	{
+		printf("Player 2 please enter your prefered symbol X or O\n");
+		
+		scanf("%s", symbol);
+
+		if (*symbol == configArray[0] || *symbol == configArray[1])
+		{
+			printf("Symbol is choosen\n");
+			returnValue = 1;
+		}
+		else if (*symbol == 'X' || *symbol == 'O')
+		{
+			printf("Entery is successful\n");
+			returnValue = 0;
+
+		}
+		else
+		{
+			printf("Entery is wrong\n");
+			returnValue = 1;
+		}
+	}
+
+	return returnValue;
+}
+
 void setPlayerConfig(uint8_t* configArray)
 {
-	printf("Player 1 please enter your prefered symbol X or O\n");
-	scanf("%c", configArray);
+	static uint8_t wrongEntery_1 = 0, wrongEntery_2 = 0;
+	uint8_t symbol = 0;
+	
+	while (getPlayerSymbol(1, &symbol));
 
-	if (configArray[0] == 'X')
-	{
-		configArray[1] = 'O';
-		printf("Player 1 symbol: X\nPlayer 2 symbol: O\n");
-	}
-	else if (configArray[0] == 'O')
-	{
-		configArray[1] = 'X';
-		printf("Player 1 symbol: O\nPlayer 2 symbol: X\n");
-	}
-	else
-	{
-		printf("Wrong entery\n");
-		setPlayerConfig(configArray);
-	}
+	configArray[0] = symbol;
+	
+	while (getPlayerSymbol(2, &symbol));
+
+	configArray[1] = symbol;
 }
+
+
+
+
