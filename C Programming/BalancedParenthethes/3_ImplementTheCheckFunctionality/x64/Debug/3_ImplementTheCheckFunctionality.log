@@ -1,2 +1,6 @@
 ﻿  check.c
+  main.c
+G:\AutomotiveSW_BC_Sprints\C Programming\BalancedParenthethes\3_ImplementTheCheckFunctionality\main.c(26,2): warning C4013: 'gets' undefined; assuming extern returning int
+  stack.c
+  Generating Code...
   3_ImplementTheCheckFunctionality.vcxproj -> G:\AutomotiveSW_BC_Sprints\C Programming\BalancedParenthethes\3_ImplementTheCheckFunctionality\x64\Debug\3_ImplementTheCheckFunctionality.exe

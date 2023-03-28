@@ -20,7 +20,7 @@
 
 int main()
 {
-	uint8_t expression[10];
+	uint8_t expression[30];
 
 	printf("Enter an Expression\n");
 	gets(expression);
