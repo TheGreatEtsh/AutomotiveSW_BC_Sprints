@@ -1,7 +1,18 @@
+/**********************************************************************************************************************
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:	stack.c
+ *	       Date:	27/3/2023
+ *		  Email:	ahmedhesham606@icloud.com
+ *	  Developer:	Ahmed Mohamed Hesham
+ *  Description:	Has the implementation of stack functions
+ *					
+ *********************************************************************************************************************/
+
 #include "standardTypes.h"
 #include "stack.h"
 #include <stdio.h>
- 
+
 
 
 /* Description:
@@ -16,7 +27,7 @@ void createEmptyStack(ST_stack_t* stack)
 
 	for (char i = 0; i < STACK_SIZE; i++)
 		stack->elements[i] = 0;
-		
+
 	stack->top = -1;
 }
 
@@ -61,10 +72,13 @@ sint8_t isEmpty(ST_stack_t* stack)
 sint8_t getStackTop(ST_stack_t* stack, uint8_t* topData)
 {
 	if (isEmpty(stack) == -2)
+	{
+		printf("you can not get stack's top, stack is Empty\n\n");
 		return -2;
+	}
 	else
 	{
-		
+
 		*topData = stack->elements[stack->top];
 		return 0;
 	}
@@ -81,7 +95,10 @@ sint8_t getStackTop(ST_stack_t* stack, uint8_t* topData)
 sint8_t printStack(ST_stack_t* stack)
 {
 	if (isEmpty(stack) == -2)
+	{
+		printf("you can not print, stack is Empty\n\n");
 		return -2;
+	}
 	else if (isFull(stack) == -1)
 	{
 		printf("Stack content from bottom to top: \n");
@@ -89,6 +106,7 @@ sint8_t printStack(ST_stack_t* stack)
 		{
 			printf("%d\n", stack->elements[i]);
 		}
+		printf("\n");
 		return -1;
 	}
 	else
@@ -98,6 +116,7 @@ sint8_t printStack(ST_stack_t* stack)
 		{
 			printf("%d\n", stack->elements[i]);
 		}
+		printf("\n");
 		return 0;
 	}
 }
@@ -112,7 +131,10 @@ sint8_t printStack(ST_stack_t* stack)
 sint8_t push(ST_stack_t* stack, uint8_t data)
 {
 	if (isFull(stack) == -1)
+	{
+		printf("You can not push, stack is Full\n\n");
 		return -1;
+	}
 	else
 	{
 		stack->top++;
@@ -131,7 +153,10 @@ sint8_t push(ST_stack_t* stack, uint8_t data)
 sint8_t pop(ST_stack_t* stack, uint8_t* data)
 {
 	if (isEmpty(stack) == -2)
+	{
+		printf("You can not pop, stack is Empty\n\n");
 		return -2;
+	}
 	else
 	{
 		*data = stack->elements[stack->top];

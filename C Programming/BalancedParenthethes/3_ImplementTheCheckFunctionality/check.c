@@ -1,3 +1,14 @@
+/**********************************************************************************************************************
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:	check.c
+ *	       Date:	27/3/2023
+ *		  Email:	ahmedhesham606@icloud.com
+ *	  Developer:	Ahmed Mohamed Hesham
+ *  Description:	Has the implementation of is balanced parenthethes function
+ *
+ *********************************************************************************************************************/
+
 #include "check.h"
 #include "stack.h"
 #include <stdio.h>

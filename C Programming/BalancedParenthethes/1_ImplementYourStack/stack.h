@@ -1,3 +1,18 @@
+/**********************************************************************************************************************
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:	stack.h
+ *	       Date:	27/3/2023
+ *		  Email:	ahmedhesham606@icloud.com
+ *	  Developer:	Ahmed Mohamed Hesham
+ *  Description:	Has the implementation stack data type & stack functions
+ *					prototype
+ *					
+ *********************************************************************************************************************/
+ 
+#ifndef STACK_H
+#define STACK_H
+
 #define STACK_SIZE	10
 
 typedef struct stack {
@@ -70,3 +85,5 @@ sint8_t isFull(ST_stack_t* stack);
  * - 0 otherwise
  */
 sint8_t isEmpty(ST_stack_t* stack);
+
+#endif // !STACK_H
