@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 uint8_t board[9] = { ' ', ' ', ' ',' ', ' ', ' ', ' ', ' ', ' ' };
-uint8_t configArray[2];
+uint8_t configArray[3];
 uint8_t roundCounter = 0;
 uint8_t playerTurn;
 

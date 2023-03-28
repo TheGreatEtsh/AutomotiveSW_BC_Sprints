@@ -102,12 +102,13 @@ void getGameState(uint8_t* gameState)
 uint8_t getPlayerSymbol(uint8_t playerNumber, uint8_t* symbol)
 {
 	uint8_t returnValue = 0;
+	//*symbol = 0;
 
 	if (playerNumber == 1)
 	{
 		printf("Player 1 please enter your prefered symbol X or O\n");
-		scanf("%s", symbol);
-
+		//scanf("%s", symbol);
+		gets(symbol);
 		if (*symbol == configArray[0] || *symbol == configArray[1])
 		{
 			printf("Symbol is choosen\n");
@@ -129,7 +130,8 @@ uint8_t getPlayerSymbol(uint8_t playerNumber, uint8_t* symbol)
 	{
 		printf("Player 2 please enter your prefered symbol X or O\n");
 
-		scanf("%s", symbol);
+		//scanf("%s", symbol);
+		gets(symbol);
 
 		if (*symbol == configArray[0] || *symbol == configArray[1])
 		{
@@ -155,17 +157,15 @@ uint8_t getPlayerSymbol(uint8_t playerNumber, uint8_t* symbol)
 void setPlayerConfig(uint8_t* configArray)
 {
 	static uint8_t wrongEntery_1 = 0, wrongEntery_2 = 0;
-	uint8_t symbol = 0;
+	uint8_t symbol[3] = { 0 };
 
-	while (getPlayerSymbol(1, &symbol));
+	while (getPlayerSymbol(1, & symbol [0]));
 
-	configArray[0] = symbol;
+	configArray[0] = symbol [0];
 
-	while (getPlayerSymbol(2, &symbol));
+	//symbol [1] = 0;
 
-	configArray[1] = symbol;
+	while (getPlayerSymbol(2, & symbol [1]));
+
+	configArray[1] = symbol [1];
 }
-
-
-
-

@@ -1,2 +1,3 @@
-﻿  main.c
+﻿  X_O.c
+G:\AutomotiveSW_BC_Sprints\C Programming\X_O Game\5_ImplementTheMainFlow\X_O.c(111,3): warning C4013: 'gets' undefined; assuming extern returning int
   5_ImplementTheMainFlow.vcxproj -> G:\AutomotiveSW_BC_Sprints\C Programming\X_O Game\5_ImplementTheMainFlow\x64\Debug\5_ImplementTheMainFlow.exe
