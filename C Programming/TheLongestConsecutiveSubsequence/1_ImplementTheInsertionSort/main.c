@@ -26,23 +26,23 @@ int main()
 	uint8_t enteredElements = 0, variable = 0;
 	sint8_t functionReturn = 0;
 	
-	printf("enter any key at first then Enter array elements then q next to last element to exist\n");
-	
+	printf("enter any key at first then Enter array elements then q if you want to stop entering elements\n");
+
 	do
-	{		
+	{
 		scanf("%c", &variable);
 		if (variable == 'q')
 			break;
-		
+
 		scanf("%d", &array[enteredElements]);
 		enteredElements++;
 	} while (variable != 'q');
-	 
+
 	if (enteredElements)
 		enteredElements--;
 
-	 //printArray(array, enteredElements);
-	
+
+
 	functionReturn = insertionSort(array, enteredElements);
 	if (functionReturn == 0)
 	{
