@@ -1,0 +1,6 @@
+﻿  lcs.c
+G:\AutomotiveSW_BC_Sprints\C Programming\RefractorTheTasks\TheLongestConsecutiveSubsequence\3_SearchForTheLCS\lcs.c(24,19): warning C4013: 'insertionSort' undefined; assuming extern returning int
+  main.c
+  sort.c
+  Generating Code...
+  3_SearchForTheLCS.vcxproj -> G:\AutomotiveSW_BC_Sprints\C Programming\RefractorTheTasks\TheLongestConsecutiveSubsequence\3_SearchForTheLCS\x64\Debug\3_SearchForTheLCS.exe
