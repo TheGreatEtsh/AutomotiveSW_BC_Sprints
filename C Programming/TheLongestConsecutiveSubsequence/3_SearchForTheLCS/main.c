@@ -59,6 +59,7 @@ int main()
 	}
 	else if (functionReturn == -3)
 	{
+		printArray(array, enteredElements);
 		printf("There is no Consecutive Subsequence\n");
 	}
 
