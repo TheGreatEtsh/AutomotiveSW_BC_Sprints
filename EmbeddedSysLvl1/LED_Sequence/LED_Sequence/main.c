@@ -12,7 +12,7 @@ int main(void)
 	APP_initModules();
     while (1) 
     {
-		APP_ledUnitTesting();
+		APP_ledSequenceV_1();
     }
 }
 
