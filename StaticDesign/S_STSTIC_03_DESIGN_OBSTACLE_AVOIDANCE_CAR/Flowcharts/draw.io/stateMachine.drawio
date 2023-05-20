@@ -1,0 +1,246 @@
+<mxfile host="Electron" modified="2023-05-20T13:43:10.748Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="aicJR-BJKwUCEzqjAVEg" version="21.2.8" type="device">
+  <diagram name="Page-1" id="revAZCzWitu2RoO4vbOR">
+    <mxGraphModel dx="270" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ez4v7Rs70oN7q0qGow7B-2" target="ez4v7Rs70oN7q0qGow7B-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-2" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="270" y="35" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-49" value="Oabstacle &amp;gt; 70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ez4v7Rs70oN7q0qGow7B-4" target="ez4v7Rs70oN7q0qGow7B-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-51" value="70 &amp;gt; Oabstacle &amp;gt; 30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-4" target="ez4v7Rs70oN7q0qGow7B-8" edge="1">
+          <mxGeometry x="-0.604" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="50" />
+              <mxPoint x="640" y="334" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-52" value="30 &amp;gt; Oabstacle &amp;gt; 20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-4" target="ez4v7Rs70oN7q0qGow7B-9" edge="1">
+          <mxGeometry x="-0.4551" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="50" />
+              <mxPoint x="690" y="454" />
+            </Array>
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-53" value="20 &amp;gt; Oabstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-4" target="ez4v7Rs70oN7q0qGow7B-9" edge="1">
+          <mxGeometry x="-0.2818" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="50" />
+              <mxPoint x="740" y="454" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-54" value="Surrounded &lt;br&gt;in 4 Dir." style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-4" target="ez4v7Rs70oN7q0qGow7B-11" edge="1">
+          <mxGeometry x="-0.5533" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="50" />
+              <mxPoint x="790" y="724" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-4" value="&lt;b&gt;CAR_INITIAL_STATE&lt;/b&gt;&lt;br&gt;1- LCD display &quot;Set Def. Rot&quot;&lt;br&gt;2- Displays rotation direction&lt;br&gt;3- PB1 used to change rot. dir.&lt;br&gt;4- after 5 seconds def rot is set&lt;br&gt;5- delay 2secs before starting" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="410" y="-10" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-29" value="Surrounded&lt;br&gt;in 4 Dir." style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1A1A1A;" parent="1" source="ez4v7Rs70oN7q0qGow7B-7" target="ez4v7Rs70oN7q0qGow7B-11" edge="1">
+          <mxGeometry x="-0.5356" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="203" />
+              <mxPoint x="790" y="725" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-34" value="20 &amp;gt; Oabstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1A1A1A;" parent="1" source="ez4v7Rs70oN7q0qGow7B-7" target="ez4v7Rs70oN7q0qGow7B-10" edge="1">
+          <mxGeometry x="-0.3479" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="203" />
+              <mxPoint x="740" y="579" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-35" value="30 &amp;gt; Oabstacle &amp;gt; 20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-7" target="ez4v7Rs70oN7q0qGow7B-9" edge="1">
+          <mxGeometry x="-0.5601" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="203" />
+              <mxPoint x="690" y="454" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-36" value="70 &amp;gt; Oabstacle &amp;gt; 30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-7" target="ez4v7Rs70oN7q0qGow7B-8" edge="1">
+          <mxGeometry x="-0.213" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-7" value="&lt;b&gt;MOVING_FWD&lt;/b&gt;&lt;br&gt;1- car speed is 30% after 5 secs&lt;br&gt;2- car speed is 50%&lt;br&gt;3- LCD displays speed&amp;nbsp;&amp;nbsp;and dir + distance" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="380" y="155" width="240" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-33" value="Surrounded&lt;br&gt;in 4 Dir." style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1A1A1A;" parent="1" source="ez4v7Rs70oN7q0qGow7B-8" target="ez4v7Rs70oN7q0qGow7B-11" edge="1">
+          <mxGeometry x="-0.393" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="334" />
+              <mxPoint x="790" y="725" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-37" value="30 &amp;gt; Oabstacle &amp;gt; 20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-8" target="ez4v7Rs70oN7q0qGow7B-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="334" />
+              <mxPoint x="690" y="454" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-39" value="20 &amp;gt; Oabstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1A1A1A;" parent="1" source="ez4v7Rs70oN7q0qGow7B-8" target="ez4v7Rs70oN7q0qGow7B-10" edge="1">
+          <mxGeometry x="-0.124" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="334" />
+              <mxPoint x="740" y="579" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-46" value="Oabstacle &amp;gt; 70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-8" target="ez4v7Rs70oN7q0qGow7B-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="334" />
+              <mxPoint x="120" y="203" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-8" value="&lt;b&gt;FOUND_OBSTACLE&lt;/b&gt;&lt;br&gt;1- car speed is 30%&lt;br&gt;2- LCD data is updated" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="430" y="296" width="140" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-32" value="Surrounded&lt;br&gt;in 4 Dir." style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1A1A1A;" parent="1" source="ez4v7Rs70oN7q0qGow7B-9" target="ez4v7Rs70oN7q0qGow7B-11" edge="1">
+          <mxGeometry x="-0.2875" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="454" />
+              <mxPoint x="790" y="725" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-38" value="20 &amp;gt; Oabstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-9" target="ez4v7Rs70oN7q0qGow7B-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="454" />
+              <mxPoint x="740" y="579" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-45" value="Oabstacle &amp;gt; 70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-9" target="ez4v7Rs70oN7q0qGow7B-7" edge="1">
+          <mxGeometry x="-0.1375" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="454" />
+              <mxPoint x="120" y="203" />
+            </Array>
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-9" value="&lt;b&gt;OBSTACLE_IS_CLOSE&lt;/b&gt;&lt;br&gt;1- car starts to rotate 90&lt;br&gt;2- LCD data is updated" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="430" y="416" width="140" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-31" value="Surrounded&lt;br&gt;in 4 Dir." style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#1A1A1A;" parent="1" source="ez4v7Rs70oN7q0qGow7B-10" target="ez4v7Rs70oN7q0qGow7B-11" edge="1">
+          <mxGeometry x="-0.1467" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="579" />
+              <mxPoint x="790" y="725" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-10" value="&lt;b&gt;OBSTACLE_IS_HERE&lt;/b&gt;&lt;br&gt;1- car moves backwards with 30%&lt;br&gt;2- LCD data is updated" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="430" y="535" width="140" height="87" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-25" value="30 &amp;gt; Oabstacle &amp;gt; 20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-11" target="ez4v7Rs70oN7q0qGow7B-9" edge="1">
+          <mxGeometry x="-0.2933" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="724" />
+              <mxPoint x="280" y="454" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-26" value="20 &amp;gt; Oabstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-11" target="ez4v7Rs70oN7q0qGow7B-10" edge="1">
+          <mxGeometry x="0.0862" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="724" />
+              <mxPoint x="360" y="578" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-27" value="70 &amp;gt; Oabstacle &amp;gt; 30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-11" edge="1">
+          <mxGeometry x="-0.4214" relative="1" as="geometry">
+            <mxPoint x="430" y="334" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="210" y="725" />
+              <mxPoint x="210" y="334" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-28" value="Oabstacle &amp;gt; 70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-11" target="ez4v7Rs70oN7q0qGow7B-7" edge="1">
+          <mxGeometry x="-0.301" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="724" />
+              <mxPoint x="120" y="203" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-11" value="&lt;b&gt;CAR_IS_SURROUNDED&lt;/b&gt;&lt;br&gt;1- car rotates 360 checking on obstacles every 3 secounds&lt;br&gt;2- LCD data is updated" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="410" y="681" width="180" height="87" as="geometry" />
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-40" value="30 &amp;gt; Oabstacle &amp;gt; 20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-10" target="ez4v7Rs70oN7q0qGow7B-9" edge="1">
+          <mxGeometry x="0.1708" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="578" />
+              <mxPoint x="280" y="454" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-43" value="70 &amp;gt; Oabstacle &amp;gt; 30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-10" target="ez4v7Rs70oN7q0qGow7B-8" edge="1">
+          <mxGeometry x="-0.2447" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="578" />
+              <mxPoint x="210" y="334" />
+            </Array>
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-42" value="70 &amp;gt; Oabstacle &amp;gt; 30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-9" target="ez4v7Rs70oN7q0qGow7B-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="454" />
+              <mxPoint x="210" y="334" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ez4v7Rs70oN7q0qGow7B-44" value="Oabstacle &amp;gt; 70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ez4v7Rs70oN7q0qGow7B-10" target="ez4v7Rs70oN7q0qGow7B-7" edge="1">
+          <mxGeometry x="-0.1994" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="578" />
+              <mxPoint x="120" y="203" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
