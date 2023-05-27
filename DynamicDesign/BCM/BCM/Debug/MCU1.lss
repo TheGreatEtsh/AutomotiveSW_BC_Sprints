@@ -1,0 +1,2334 @@
+
+MCU1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000b7c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000018  00800060  00000b7c  00000c10  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000062a  00800078  00800078  00000c28  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000c28  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000c58  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000001f0  00000000  00000000  00000c94  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000024aa  00000000  00000000  00000e84  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000e31  00000000  00000000  0000332e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000138b  00000000  00000000  0000415f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000039c  00000000  00000000  000054ec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000eb0  00000000  00000000  00005888  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000166b  00000000  00000000  00006738  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001c0  00000000  00000000  00007da3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 36 00 	jmp	0x6c	; 0x6c <__ctors_end>
+   4:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+   8:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+   c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  10:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  14:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  18:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  1c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  20:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  24:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  28:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  2c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  30:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  34:	0c 94 8d 02 	jmp	0x51a	; 0x51a <__vector_13>
+  38:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  3c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  40:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  44:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  48:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  4c:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  50:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__bad_interrupt>
+  54:	14 02       	muls	r17, r20
+  56:	18 02       	muls	r17, r24
+  58:	1c 02       	muls	r17, r28
+  5a:	20 02       	muls	r18, r16
+  5c:	24 02       	muls	r18, r20
+  5e:	28 02       	muls	r18, r24
+  60:	2c 02       	muls	r18, r28
+  62:	30 02       	muls	r19, r16
+  64:	34 02       	muls	r19, r20
+  66:	38 02       	muls	r19, r24
+  68:	3c 02       	muls	r19, r28
+  6a:	40 02       	muls	r20, r16
+
+0000006c <__ctors_end>:
+  6c:	11 24       	eor	r1, r1
+  6e:	1f be       	out	0x3f, r1	; 63
+  70:	cf e5       	ldi	r28, 0x5F	; 95
+  72:	d8 e0       	ldi	r29, 0x08	; 8
+  74:	de bf       	out	0x3e, r29	; 62
+  76:	cd bf       	out	0x3d, r28	; 61
+
+00000078 <__do_copy_data>:
+  78:	10 e0       	ldi	r17, 0x00	; 0
+  7a:	a0 e6       	ldi	r26, 0x60	; 96
+  7c:	b0 e0       	ldi	r27, 0x00	; 0
+  7e:	ec e7       	ldi	r30, 0x7C	; 124
+  80:	fb e0       	ldi	r31, 0x0B	; 11
+  82:	02 c0       	rjmp	.+4      	; 0x88 <__do_copy_data+0x10>
+  84:	05 90       	lpm	r0, Z+
+  86:	0d 92       	st	X+, r0
+  88:	a8 37       	cpi	r26, 0x78	; 120
+  8a:	b1 07       	cpc	r27, r17
+  8c:	d9 f7       	brne	.-10     	; 0x84 <__do_copy_data+0xc>
+
+0000008e <__do_clear_bss>:
+  8e:	26 e0       	ldi	r18, 0x06	; 6
+  90:	a8 e7       	ldi	r26, 0x78	; 120
+  92:	b0 e0       	ldi	r27, 0x00	; 0
+  94:	01 c0       	rjmp	.+2      	; 0x98 <.do_clear_bss_start>
+
+00000096 <.do_clear_bss_loop>:
+  96:	1d 92       	st	X+, r1
+
+00000098 <.do_clear_bss_start>:
+  98:	a2 3a       	cpi	r26, 0xA2	; 162
+  9a:	b2 07       	cpc	r27, r18
+  9c:	e1 f7       	brne	.-8      	; 0x96 <.do_clear_bss_loop>
+  9e:	0e 94 ec 00 	call	0x1d8	; 0x1d8 <main>
+  a2:	0c 94 bc 05 	jmp	0xb78	; 0xb78 <_exit>
+
+000000a6 <__bad_interrupt>:
+  a6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000aa <APP_dataSentTask>:
+	BCM_send_n(&glstr_exchangeDataInstance);
+}
+
+void APP_dataSentTask(void)
+{
+	LED_toggle(LED_0);
+  aa:	80 e0       	ldi	r24, 0x00	; 0
+  ac:	0e 94 bc 00 	call	0x178	; 0x178 <LED_toggle>
+  b0:	08 95       	ret
+
+000000b2 <APP_saveReceivedTask>:
+
+
+
+
+void APP_saveReceivedTask(void)
+{
+  b2:	cf 93       	push	r28
+  b4:	df 93       	push	r29
+  b6:	00 d0       	rcall	.+0      	; 0xb8 <APP_saveReceivedTask+0x6>
+  b8:	cd b7       	in	r28, 0x3d	; 61
+  ba:	de b7       	in	r29, 0x3e	; 62
+	uint8_t** ptr_uint8_receivedData = NULL_PTR;
+	uint16_t uint16_dataSize = 0;
+  bc:	1a 82       	std	Y+2, r1	; 0x02
+  be:	19 82       	std	Y+1, r1	; 0x01
+	
+	LED_toggle(LED_1);
+  c0:	81 e0       	ldi	r24, 0x01	; 1
+  c2:	0e 94 bc 00 	call	0x178	; 0x178 <LED_toggle>
+	
+	BCM_receiveData(ptr_uint8_receivedData, &uint16_dataSize);
+  c6:	be 01       	movw	r22, r28
+  c8:	6f 5f       	subi	r22, 0xFF	; 255
+  ca:	7f 4f       	sbci	r23, 0xFF	; 255
+  cc:	80 e0       	ldi	r24, 0x00	; 0
+  ce:	90 e0       	ldi	r25, 0x00	; 0
+  d0:	0e 94 c7 04 	call	0x98e	; 0x98e <BCM_receiveData>
+	
+	glstr_exchangeDataInstance.dataSize = uint16_dataSize;
+  d4:	e7 e8       	ldi	r30, 0x87	; 135
+  d6:	f0 e0       	ldi	r31, 0x00	; 0
+  d8:	89 81       	ldd	r24, Y+1	; 0x01
+  da:	9a 81       	ldd	r25, Y+2	; 0x02
+  dc:	92 83       	std	Z+2, r25	; 0x02
+  de:	81 83       	std	Z+1, r24	; 0x01
+	glstr_exchangeDataInstance.data = *ptr_uint8_receivedData;
+  e0:	80 91 00 00 	lds	r24, 0x0000	; 0x800000 <__TEXT_REGION_LENGTH__+0x7f8000>
+  e4:	90 91 01 00 	lds	r25, 0x0001	; 0x800001 <__TEXT_REGION_LENGTH__+0x7f8001>
+  e8:	94 83       	std	Z+4, r25	; 0x04
+  ea:	83 83       	std	Z+3, r24	; 0x03
+	
+	BCM_send_n(&glstr_exchangeDataInstance);
+  ec:	cf 01       	movw	r24, r30
+  ee:	0e 94 36 03 	call	0x66c	; 0x66c <BCM_send_n>
+}
+  f2:	0f 90       	pop	r0
+  f4:	0f 90       	pop	r0
+  f6:	df 91       	pop	r29
+  f8:	cf 91       	pop	r28
+  fa:	08 95       	ret
+
+000000fc <APP_init>:
+
+str_BCM_instance_t glstr_exchangeDataInstance;
+
+void APP_init (void)
+{
+	LED_init();
+  fc:	0e 94 94 00 	call	0x128	; 0x128 <LED_init>
+	
+	glstr_exchangeDataInstance.dataType = BCM_EXCHANGE;
+ 100:	10 92 87 00 	sts	0x0087, r1	; 0x800087 <glstr_exchangeDataInstance>
+	BCM_init(&glstr_exchangeDataInstance);
+ 104:	87 e8       	ldi	r24, 0x87	; 135
+ 106:	90 e0       	ldi	r25, 0x00	; 0
+ 108:	0e 94 0c 03 	call	0x618	; 0x618 <BCM_init>
+	BCM_setCallBack(&glstr_exchangeDataInstance,APP_saveReceivedTask);
+ 10c:	69 e5       	ldi	r22, 0x59	; 89
+ 10e:	70 e0       	ldi	r23, 0x00	; 0
+ 110:	87 e8       	ldi	r24, 0x87	; 135
+ 112:	90 e0       	ldi	r25, 0x00	; 0
+ 114:	0e 94 cb 04 	call	0x996	; 0x996 <BCM_setCallBack>
+	BCM_dataSentCallBack(APP_dataSentTask);
+ 118:	85 e5       	ldi	r24, 0x55	; 85
+ 11a:	90 e0       	ldi	r25, 0x00	; 0
+ 11c:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <BCM_dataSentCallBack>
+ 120:	08 95       	ret
+
+00000122 <APP_superLoop>:
+void APP_superLoop(void)
+{
+	
+	while(1)
+	{
+		BCM_dispatcher();
+ 122:	0e 94 df 03 	call	0x7be	; 0x7be <BCM_dispatcher>
+ 126:	fd cf       	rjmp	.-6      	; 0x122 <APP_superLoop>
+
+00000128 <LED_init>:
+					DIO_LOW);
+		en_a_error = LED_OK;
+	}
+	
+	return en_a_error;
+}
+ 128:	cf 93       	push	r28
+ 12a:	c0 e0       	ldi	r28, 0x00	; 0
+ 12c:	80 e0       	ldi	r24, 0x00	; 0
+ 12e:	20 c0       	rjmp	.+64     	; 0x170 <LED_init+0x48>
+ 130:	2c 2f       	mov	r18, r28
+ 132:	30 e0       	ldi	r19, 0x00	; 0
+ 134:	f9 01       	movw	r30, r18
+ 136:	ee 0f       	add	r30, r30
+ 138:	ff 1f       	adc	r31, r31
+ 13a:	e2 0f       	add	r30, r18
+ 13c:	f3 1f       	adc	r31, r19
+ 13e:	ec 59       	subi	r30, 0x9C	; 156
+ 140:	ff 4f       	sbci	r31, 0xFF	; 255
+ 142:	81 81       	ldd	r24, Z+1	; 0x01
+ 144:	85 34       	cpi	r24, 0x45	; 69
+ 146:	80 f4       	brcc	.+32     	; 0x168 <LED_init+0x40>
+ 148:	f9 01       	movw	r30, r18
+ 14a:	ee 0f       	add	r30, r30
+ 14c:	ff 1f       	adc	r31, r31
+ 14e:	2e 0f       	add	r18, r30
+ 150:	3f 1f       	adc	r19, r31
+ 152:	f9 01       	movw	r30, r18
+ 154:	ec 59       	subi	r30, 0x9C	; 156
+ 156:	ff 4f       	sbci	r31, 0xFF	; 255
+ 158:	62 81       	ldd	r22, Z+2	; 0x02
+ 15a:	68 30       	cpi	r22, 0x08	; 8
+ 15c:	38 f4       	brcc	.+14     	; 0x16c <LED_init+0x44>
+ 15e:	41 e0       	ldi	r20, 0x01	; 1
+ 160:	0e 94 f1 00 	call	0x1e2	; 0x1e2 <DIO_init>
+ 164:	80 e0       	ldi	r24, 0x00	; 0
+ 166:	03 c0       	rjmp	.+6      	; 0x16e <LED_init+0x46>
+ 168:	81 e0       	ldi	r24, 0x01	; 1
+ 16a:	01 c0       	rjmp	.+2      	; 0x16e <LED_init+0x46>
+ 16c:	82 e0       	ldi	r24, 0x02	; 2
+ 16e:	cf 5f       	subi	r28, 0xFF	; 255
+ 170:	c2 30       	cpi	r28, 0x02	; 2
+ 172:	f0 f2       	brcs	.-68     	; 0x130 <LED_init+0x8>
+ 174:	cf 91       	pop	r28
+ 176:	08 95       	ret
+
+00000178 <LED_toggle>:
+enu_LED_status_t LED_toggle(uint8_t uint8_ledID)
+{
+	enu_LED_status_t en_a_error = LED_OK;
+	
+	uint8_t counter = 0;
+ 178:	20 e0       	ldi	r18, 0x00	; 0
+	for (;counter < LED_NUMBER_OF_LEDS; counter++)
+ 17a:	0e c0       	rjmp	.+28     	; 0x198 <LED_toggle+0x20>
+	{
+		if (uint8_ledID == cst_str_LED_config[counter].uint8_ledID)
+ 17c:	42 2f       	mov	r20, r18
+ 17e:	50 e0       	ldi	r21, 0x00	; 0
+ 180:	fa 01       	movw	r30, r20
+ 182:	ee 0f       	add	r30, r30
+ 184:	ff 1f       	adc	r31, r31
+ 186:	4e 0f       	add	r20, r30
+ 188:	5f 1f       	adc	r21, r31
+ 18a:	fa 01       	movw	r30, r20
+ 18c:	ec 59       	subi	r30, 0x9C	; 156
+ 18e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 190:	90 81       	ld	r25, Z
+ 192:	98 17       	cp	r25, r24
+ 194:	19 f0       	breq	.+6      	; 0x19c <LED_toggle+0x24>
+enu_LED_status_t LED_toggle(uint8_t uint8_ledID)
+{
+	enu_LED_status_t en_a_error = LED_OK;
+	
+	uint8_t counter = 0;
+	for (;counter < LED_NUMBER_OF_LEDS; counter++)
+ 196:	2f 5f       	subi	r18, 0xFF	; 255
+ 198:	22 30       	cpi	r18, 0x02	; 2
+ 19a:	80 f3       	brcs	.-32     	; 0x17c <LED_toggle+0x4>
+		{
+			break;
+		}
+	}
+	
+	if (cst_str_LED_config[counter].uint8_ledPort > DIO_PORT_D)
+ 19c:	30 e0       	ldi	r19, 0x00	; 0
+ 19e:	f9 01       	movw	r30, r18
+ 1a0:	ee 0f       	add	r30, r30
+ 1a2:	ff 1f       	adc	r31, r31
+ 1a4:	e2 0f       	add	r30, r18
+ 1a6:	f3 1f       	adc	r31, r19
+ 1a8:	ec 59       	subi	r30, 0x9C	; 156
+ 1aa:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1ac:	81 81       	ldd	r24, Z+1	; 0x01
+ 1ae:	85 34       	cpi	r24, 0x45	; 69
+ 1b0:	78 f4       	brcc	.+30     	; 0x1d0 <LED_toggle+0x58>
+	{
+		en_a_error = LED_WRONG_LED_PORT;
+	}
+	else if (cst_str_LED_config[counter].uint8_ledPin > 7)
+ 1b2:	f9 01       	movw	r30, r18
+ 1b4:	ee 0f       	add	r30, r30
+ 1b6:	ff 1f       	adc	r31, r31
+ 1b8:	2e 0f       	add	r18, r30
+ 1ba:	3f 1f       	adc	r19, r31
+ 1bc:	f9 01       	movw	r30, r18
+ 1be:	ec 59       	subi	r30, 0x9C	; 156
+ 1c0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1c2:	62 81       	ldd	r22, Z+2	; 0x02
+ 1c4:	68 30       	cpi	r22, 0x08	; 8
+ 1c6:	30 f4       	brcc	.+12     	; 0x1d4 <LED_toggle+0x5c>
+	{
+		en_a_error = LED_WRONG_LED_PIN;
+	}
+	else
+	{
+		DIO_toggle(cst_str_LED_config[counter].uint8_ledPort, cst_str_LED_config[counter].uint8_ledPin);
+ 1c8:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <DIO_toggle>
+		en_a_error = LED_OK;
+ 1cc:	80 e0       	ldi	r24, 0x00	; 0
+ 1ce:	08 95       	ret
+		}
+	}
+	
+	if (cst_str_LED_config[counter].uint8_ledPort > DIO_PORT_D)
+	{
+		en_a_error = LED_WRONG_LED_PORT;
+ 1d0:	81 e0       	ldi	r24, 0x01	; 1
+ 1d2:	08 95       	ret
+	}
+	else if (cst_str_LED_config[counter].uint8_ledPin > 7)
+	{
+		en_a_error = LED_WRONG_LED_PIN;
+ 1d4:	82 e0       	ldi	r24, 0x02	; 2
+		DIO_toggle(cst_str_LED_config[counter].uint8_ledPort, cst_str_LED_config[counter].uint8_ledPin);
+		en_a_error = LED_OK;
+	}
+	
+	return en_a_error;
+}
+ 1d6:	08 95       	ret
+
+000001d8 <main>:
+
+int main(void)
+{
+    /* Replace with your application code */
+	
+	APP_init();
+ 1d8:	0e 94 7e 00 	call	0xfc	; 0xfc <APP_init>
+	APP_superLoop();
+ 1dc:	0e 94 91 00 	call	0x122	; 0x122 <APP_superLoop>
+ 1e0:	ff cf       	rjmp	.-2      	; 0x1e0 <main+0x8>
+
+000001e2 <DIO_init>:
+	{
+		error = DIO_WRONG_PIN_NUMBER;
+	}
+	return error;
+
+}
+ 1e2:	68 30       	cpi	r22, 0x08	; 8
+ 1e4:	08 f0       	brcs	.+2      	; 0x1e8 <DIO_init+0x6>
+ 1e6:	80 c0       	rjmp	.+256    	; 0x2e8 <DIO_init+0x106>
+ 1e8:	44 23       	and	r20, r20
+ 1ea:	21 f0       	breq	.+8      	; 0x1f4 <DIO_init+0x12>
+ 1ec:	41 30       	cpi	r20, 0x01	; 1
+ 1ee:	09 f4       	brne	.+2      	; 0x1f2 <DIO_init+0x10>
+ 1f0:	40 c0       	rjmp	.+128    	; 0x272 <DIO_init+0x90>
+ 1f2:	7c c0       	rjmp	.+248    	; 0x2ec <DIO_init+0x10a>
+ 1f4:	82 34       	cpi	r24, 0x42	; 66
+ 1f6:	b1 f0       	breq	.+44     	; 0x224 <DIO_init+0x42>
+ 1f8:	18 f4       	brcc	.+6      	; 0x200 <DIO_init+0x1e>
+ 1fa:	81 34       	cpi	r24, 0x41	; 65
+ 1fc:	31 f0       	breq	.+12     	; 0x20a <DIO_init+0x28>
+ 1fe:	78 c0       	rjmp	.+240    	; 0x2f0 <DIO_init+0x10e>
+ 200:	83 34       	cpi	r24, 0x43	; 67
+ 202:	e9 f0       	breq	.+58     	; 0x23e <DIO_init+0x5c>
+ 204:	84 34       	cpi	r24, 0x44	; 68
+ 206:	41 f1       	breq	.+80     	; 0x258 <DIO_init+0x76>
+ 208:	73 c0       	rjmp	.+230    	; 0x2f0 <DIO_init+0x10e>
+ 20a:	2a b3       	in	r18, 0x1a	; 26
+ 20c:	81 e0       	ldi	r24, 0x01	; 1
+ 20e:	90 e0       	ldi	r25, 0x00	; 0
+ 210:	02 c0       	rjmp	.+4      	; 0x216 <DIO_init+0x34>
+ 212:	88 0f       	add	r24, r24
+ 214:	99 1f       	adc	r25, r25
+ 216:	6a 95       	dec	r22
+ 218:	e2 f7       	brpl	.-8      	; 0x212 <DIO_init+0x30>
+ 21a:	80 95       	com	r24
+ 21c:	82 23       	and	r24, r18
+ 21e:	8a bb       	out	0x1a, r24	; 26
+ 220:	80 e0       	ldi	r24, 0x00	; 0
+ 222:	08 95       	ret
+ 224:	27 b3       	in	r18, 0x17	; 23
+ 226:	81 e0       	ldi	r24, 0x01	; 1
+ 228:	90 e0       	ldi	r25, 0x00	; 0
+ 22a:	02 c0       	rjmp	.+4      	; 0x230 <DIO_init+0x4e>
+ 22c:	88 0f       	add	r24, r24
+ 22e:	99 1f       	adc	r25, r25
+ 230:	6a 95       	dec	r22
+ 232:	e2 f7       	brpl	.-8      	; 0x22c <DIO_init+0x4a>
+ 234:	80 95       	com	r24
+ 236:	82 23       	and	r24, r18
+ 238:	87 bb       	out	0x17, r24	; 23
+ 23a:	80 e0       	ldi	r24, 0x00	; 0
+ 23c:	08 95       	ret
+ 23e:	24 b3       	in	r18, 0x14	; 20
+ 240:	81 e0       	ldi	r24, 0x01	; 1
+ 242:	90 e0       	ldi	r25, 0x00	; 0
+ 244:	02 c0       	rjmp	.+4      	; 0x24a <DIO_init+0x68>
+ 246:	88 0f       	add	r24, r24
+ 248:	99 1f       	adc	r25, r25
+ 24a:	6a 95       	dec	r22
+ 24c:	e2 f7       	brpl	.-8      	; 0x246 <DIO_init+0x64>
+ 24e:	80 95       	com	r24
+ 250:	82 23       	and	r24, r18
+ 252:	84 bb       	out	0x14, r24	; 20
+ 254:	80 e0       	ldi	r24, 0x00	; 0
+ 256:	08 95       	ret
+ 258:	21 b3       	in	r18, 0x11	; 17
+ 25a:	81 e0       	ldi	r24, 0x01	; 1
+ 25c:	90 e0       	ldi	r25, 0x00	; 0
+ 25e:	02 c0       	rjmp	.+4      	; 0x264 <DIO_init+0x82>
+ 260:	88 0f       	add	r24, r24
+ 262:	99 1f       	adc	r25, r25
+ 264:	6a 95       	dec	r22
+ 266:	e2 f7       	brpl	.-8      	; 0x260 <DIO_init+0x7e>
+ 268:	80 95       	com	r24
+ 26a:	82 23       	and	r24, r18
+ 26c:	81 bb       	out	0x11, r24	; 17
+ 26e:	80 e0       	ldi	r24, 0x00	; 0
+ 270:	08 95       	ret
+ 272:	82 34       	cpi	r24, 0x42	; 66
+ 274:	a9 f0       	breq	.+42     	; 0x2a0 <DIO_init+0xbe>
+ 276:	18 f4       	brcc	.+6      	; 0x27e <DIO_init+0x9c>
+ 278:	81 34       	cpi	r24, 0x41	; 65
+ 27a:	31 f0       	breq	.+12     	; 0x288 <DIO_init+0xa6>
+ 27c:	3b c0       	rjmp	.+118    	; 0x2f4 <DIO_init+0x112>
+ 27e:	83 34       	cpi	r24, 0x43	; 67
+ 280:	d9 f0       	breq	.+54     	; 0x2b8 <DIO_init+0xd6>
+ 282:	84 34       	cpi	r24, 0x44	; 68
+ 284:	29 f1       	breq	.+74     	; 0x2d0 <DIO_init+0xee>
+ 286:	36 c0       	rjmp	.+108    	; 0x2f4 <DIO_init+0x112>
+ 288:	2a b3       	in	r18, 0x1a	; 26
+ 28a:	81 e0       	ldi	r24, 0x01	; 1
+ 28c:	90 e0       	ldi	r25, 0x00	; 0
+ 28e:	02 c0       	rjmp	.+4      	; 0x294 <DIO_init+0xb2>
+ 290:	88 0f       	add	r24, r24
+ 292:	99 1f       	adc	r25, r25
+ 294:	6a 95       	dec	r22
+ 296:	e2 f7       	brpl	.-8      	; 0x290 <DIO_init+0xae>
+ 298:	82 2b       	or	r24, r18
+ 29a:	8a bb       	out	0x1a, r24	; 26
+ 29c:	80 e0       	ldi	r24, 0x00	; 0
+ 29e:	08 95       	ret
+ 2a0:	27 b3       	in	r18, 0x17	; 23
+ 2a2:	81 e0       	ldi	r24, 0x01	; 1
+ 2a4:	90 e0       	ldi	r25, 0x00	; 0
+ 2a6:	02 c0       	rjmp	.+4      	; 0x2ac <DIO_init+0xca>
+ 2a8:	88 0f       	add	r24, r24
+ 2aa:	99 1f       	adc	r25, r25
+ 2ac:	6a 95       	dec	r22
+ 2ae:	e2 f7       	brpl	.-8      	; 0x2a8 <DIO_init+0xc6>
+ 2b0:	82 2b       	or	r24, r18
+ 2b2:	87 bb       	out	0x17, r24	; 23
+ 2b4:	80 e0       	ldi	r24, 0x00	; 0
+ 2b6:	08 95       	ret
+ 2b8:	24 b3       	in	r18, 0x14	; 20
+ 2ba:	81 e0       	ldi	r24, 0x01	; 1
+ 2bc:	90 e0       	ldi	r25, 0x00	; 0
+ 2be:	02 c0       	rjmp	.+4      	; 0x2c4 <DIO_init+0xe2>
+ 2c0:	88 0f       	add	r24, r24
+ 2c2:	99 1f       	adc	r25, r25
+ 2c4:	6a 95       	dec	r22
+ 2c6:	e2 f7       	brpl	.-8      	; 0x2c0 <DIO_init+0xde>
+ 2c8:	82 2b       	or	r24, r18
+ 2ca:	84 bb       	out	0x14, r24	; 20
+ 2cc:	80 e0       	ldi	r24, 0x00	; 0
+ 2ce:	08 95       	ret
+ 2d0:	21 b3       	in	r18, 0x11	; 17
+ 2d2:	81 e0       	ldi	r24, 0x01	; 1
+ 2d4:	90 e0       	ldi	r25, 0x00	; 0
+ 2d6:	02 c0       	rjmp	.+4      	; 0x2dc <DIO_init+0xfa>
+ 2d8:	88 0f       	add	r24, r24
+ 2da:	99 1f       	adc	r25, r25
+ 2dc:	6a 95       	dec	r22
+ 2de:	e2 f7       	brpl	.-8      	; 0x2d8 <DIO_init+0xf6>
+ 2e0:	82 2b       	or	r24, r18
+ 2e2:	81 bb       	out	0x11, r24	; 17
+ 2e4:	80 e0       	ldi	r24, 0x00	; 0
+ 2e6:	08 95       	ret
+ 2e8:	82 e0       	ldi	r24, 0x02	; 2
+ 2ea:	08 95       	ret
+ 2ec:	84 e0       	ldi	r24, 0x04	; 4
+ 2ee:	08 95       	ret
+ 2f0:	81 e0       	ldi	r24, 0x01	; 1
+ 2f2:	08 95       	ret
+ 2f4:	81 e0       	ldi	r24, 0x01	; 1
+ 2f6:	08 95       	ret
+
+000002f8 <DIO_toggle>:
+*										WRONG_PORT_NUMBER
+*******************************************************************************/
+enu_DIO_status_t DIO_toggle(uint8_t uint8_portNumber, uint8_t uint8_pinNumber)						// Toggle dio
+{
+	enu_DIO_status_t error = DIO_OK;
+	if (uint8_pinNumber < 8)
+ 2f8:	68 30       	cpi	r22, 0x08	; 8
+ 2fa:	d8 f5       	brcc	.+118    	; 0x372 <DIO_toggle+0x7a>
+	{
+		switch(uint8_portNumber)
+ 2fc:	82 34       	cpi	r24, 0x42	; 66
+ 2fe:	a9 f0       	breq	.+42     	; 0x32a <DIO_toggle+0x32>
+ 300:	18 f4       	brcc	.+6      	; 0x308 <DIO_toggle+0x10>
+ 302:	81 34       	cpi	r24, 0x41	; 65
+ 304:	31 f0       	breq	.+12     	; 0x312 <DIO_toggle+0x1a>
+ 306:	37 c0       	rjmp	.+110    	; 0x376 <DIO_toggle+0x7e>
+ 308:	83 34       	cpi	r24, 0x43	; 67
+ 30a:	d9 f0       	breq	.+54     	; 0x342 <DIO_toggle+0x4a>
+ 30c:	84 34       	cpi	r24, 0x44	; 68
+ 30e:	29 f1       	breq	.+74     	; 0x35a <DIO_toggle+0x62>
+ 310:	32 c0       	rjmp	.+100    	; 0x376 <DIO_toggle+0x7e>
+		{
+			case DIO_PORT_A:	TGL_BIT(PORTA,uint8_pinNumber);		break;
+ 312:	2b b3       	in	r18, 0x1b	; 27
+ 314:	81 e0       	ldi	r24, 0x01	; 1
+ 316:	90 e0       	ldi	r25, 0x00	; 0
+ 318:	02 c0       	rjmp	.+4      	; 0x31e <DIO_toggle+0x26>
+ 31a:	88 0f       	add	r24, r24
+ 31c:	99 1f       	adc	r25, r25
+ 31e:	6a 95       	dec	r22
+ 320:	e2 f7       	brpl	.-8      	; 0x31a <DIO_toggle+0x22>
+ 322:	82 27       	eor	r24, r18
+ 324:	8b bb       	out	0x1b, r24	; 27
+*										WRONG_PIN_NUMBER
+*										WRONG_PORT_NUMBER
+*******************************************************************************/
+enu_DIO_status_t DIO_toggle(uint8_t uint8_portNumber, uint8_t uint8_pinNumber)						// Toggle dio
+{
+	enu_DIO_status_t error = DIO_OK;
+ 326:	80 e0       	ldi	r24, 0x00	; 0
+	if (uint8_pinNumber < 8)
+	{
+		switch(uint8_portNumber)
+		{
+			case DIO_PORT_A:	TGL_BIT(PORTA,uint8_pinNumber);		break;
+ 328:	08 95       	ret
+			case DIO_PORT_B:	TGL_BIT(PORTB,uint8_pinNumber);		break;
+ 32a:	28 b3       	in	r18, 0x18	; 24
+ 32c:	81 e0       	ldi	r24, 0x01	; 1
+ 32e:	90 e0       	ldi	r25, 0x00	; 0
+ 330:	02 c0       	rjmp	.+4      	; 0x336 <DIO_toggle+0x3e>
+ 332:	88 0f       	add	r24, r24
+ 334:	99 1f       	adc	r25, r25
+ 336:	6a 95       	dec	r22
+ 338:	e2 f7       	brpl	.-8      	; 0x332 <DIO_toggle+0x3a>
+ 33a:	82 27       	eor	r24, r18
+ 33c:	88 bb       	out	0x18, r24	; 24
+*										WRONG_PIN_NUMBER
+*										WRONG_PORT_NUMBER
+*******************************************************************************/
+enu_DIO_status_t DIO_toggle(uint8_t uint8_portNumber, uint8_t uint8_pinNumber)						// Toggle dio
+{
+	enu_DIO_status_t error = DIO_OK;
+ 33e:	80 e0       	ldi	r24, 0x00	; 0
+	if (uint8_pinNumber < 8)
+	{
+		switch(uint8_portNumber)
+		{
+			case DIO_PORT_A:	TGL_BIT(PORTA,uint8_pinNumber);		break;
+			case DIO_PORT_B:	TGL_BIT(PORTB,uint8_pinNumber);		break;
+ 340:	08 95       	ret
+			case DIO_PORT_C:	TGL_BIT(PORTC,uint8_pinNumber);		break;
+ 342:	25 b3       	in	r18, 0x15	; 21
+ 344:	81 e0       	ldi	r24, 0x01	; 1
+ 346:	90 e0       	ldi	r25, 0x00	; 0
+ 348:	02 c0       	rjmp	.+4      	; 0x34e <DIO_toggle+0x56>
+ 34a:	88 0f       	add	r24, r24
+ 34c:	99 1f       	adc	r25, r25
+ 34e:	6a 95       	dec	r22
+ 350:	e2 f7       	brpl	.-8      	; 0x34a <DIO_toggle+0x52>
+ 352:	82 27       	eor	r24, r18
+ 354:	85 bb       	out	0x15, r24	; 21
+*										WRONG_PIN_NUMBER
+*										WRONG_PORT_NUMBER
+*******************************************************************************/
+enu_DIO_status_t DIO_toggle(uint8_t uint8_portNumber, uint8_t uint8_pinNumber)						// Toggle dio
+{
+	enu_DIO_status_t error = DIO_OK;
+ 356:	80 e0       	ldi	r24, 0x00	; 0
+	{
+		switch(uint8_portNumber)
+		{
+			case DIO_PORT_A:	TGL_BIT(PORTA,uint8_pinNumber);		break;
+			case DIO_PORT_B:	TGL_BIT(PORTB,uint8_pinNumber);		break;
+			case DIO_PORT_C:	TGL_BIT(PORTC,uint8_pinNumber);		break;
+ 358:	08 95       	ret
+			case DIO_PORT_D:	TGL_BIT(PORTD,uint8_pinNumber);		break;
+ 35a:	22 b3       	in	r18, 0x12	; 18
+ 35c:	81 e0       	ldi	r24, 0x01	; 1
+ 35e:	90 e0       	ldi	r25, 0x00	; 0
+ 360:	02 c0       	rjmp	.+4      	; 0x366 <DIO_toggle+0x6e>
+ 362:	88 0f       	add	r24, r24
+ 364:	99 1f       	adc	r25, r25
+ 366:	6a 95       	dec	r22
+ 368:	e2 f7       	brpl	.-8      	; 0x362 <DIO_toggle+0x6a>
+ 36a:	82 27       	eor	r24, r18
+ 36c:	82 bb       	out	0x12, r24	; 18
+*										WRONG_PIN_NUMBER
+*										WRONG_PORT_NUMBER
+*******************************************************************************/
+enu_DIO_status_t DIO_toggle(uint8_t uint8_portNumber, uint8_t uint8_pinNumber)						// Toggle dio
+{
+	enu_DIO_status_t error = DIO_OK;
+ 36e:	80 e0       	ldi	r24, 0x00	; 0
+		switch(uint8_portNumber)
+		{
+			case DIO_PORT_A:	TGL_BIT(PORTA,uint8_pinNumber);		break;
+			case DIO_PORT_B:	TGL_BIT(PORTB,uint8_pinNumber);		break;
+			case DIO_PORT_C:	TGL_BIT(PORTC,uint8_pinNumber);		break;
+			case DIO_PORT_D:	TGL_BIT(PORTD,uint8_pinNumber);		break;
+ 370:	08 95       	ret
+			default:		error = DIO_WRONG_PORT_NUMBER;		break;
+		}	
+	}
+	else
+	{
+		error = DIO_WRONG_PIN_NUMBER;
+ 372:	82 e0       	ldi	r24, 0x02	; 2
+ 374:	08 95       	ret
+		{
+			case DIO_PORT_A:	TGL_BIT(PORTA,uint8_pinNumber);		break;
+			case DIO_PORT_B:	TGL_BIT(PORTB,uint8_pinNumber);		break;
+			case DIO_PORT_C:	TGL_BIT(PORTC,uint8_pinNumber);		break;
+			case DIO_PORT_D:	TGL_BIT(PORTD,uint8_pinNumber);		break;
+			default:		error = DIO_WRONG_PORT_NUMBER;		break;
+ 376:	81 e0       	ldi	r24, 0x01	; 1
+	else
+	{
+		error = DIO_WRONG_PIN_NUMBER;
+	}
+	return error;
+}
+ 378:	08 95       	ret
+
+0000037a <UART_init>:
+ enu_UART_status_t UART_deinit (void)
+ {
+	 enu_UART_status_t returnValue = UART_OK;
+	 UCSRB = 0;
+	 return returnValue;
+ }
+ 37a:	40 e0       	ldi	r20, 0x00	; 0
+ 37c:	60 e0       	ldi	r22, 0x00	; 0
+ 37e:	84 e4       	ldi	r24, 0x44	; 68
+ 380:	0e 94 f1 00 	call	0x1e2	; 0x1e2 <DIO_init>
+ 384:	41 e0       	ldi	r20, 0x01	; 1
+ 386:	61 e0       	ldi	r22, 0x01	; 1
+ 388:	84 e4       	ldi	r24, 0x44	; 68
+ 38a:	0e 94 f1 00 	call	0x1e2	; 0x1e2 <DIO_init>
+ 38e:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <cst_str_UART_config+0x4>
+ 392:	81 30       	cpi	r24, 0x01	; 1
+ 394:	29 f4       	brne	.+10     	; 0x3a0 <UART_init+0x26>
+ 396:	8a b1       	in	r24, 0x0a	; 10
+ 398:	80 68       	ori	r24, 0x80	; 128
+ 39a:	8a b9       	out	0x0a, r24	; 10
+ 39c:	80 e0       	ldi	r24, 0x00	; 0
+ 39e:	08 c0       	rjmp	.+16     	; 0x3b0 <UART_init+0x36>
+ 3a0:	81 11       	cpse	r24, r1
+ 3a2:	05 c0       	rjmp	.+10     	; 0x3ae <UART_init+0x34>
+ 3a4:	8a b1       	in	r24, 0x0a	; 10
+ 3a6:	8f 77       	andi	r24, 0x7F	; 127
+ 3a8:	8a b9       	out	0x0a, r24	; 10
+ 3aa:	80 e0       	ldi	r24, 0x00	; 0
+ 3ac:	01 c0       	rjmp	.+2      	; 0x3b0 <UART_init+0x36>
+ 3ae:	82 e0       	ldi	r24, 0x02	; 2
+ 3b0:	90 91 70 00 	lds	r25, 0x0070	; 0x800070 <cst_str_UART_config+0x6>
+ 3b4:	91 30       	cpi	r25, 0x01	; 1
+ 3b6:	21 f4       	brne	.+8      	; 0x3c0 <UART_init+0x46>
+ 3b8:	9a b1       	in	r25, 0x0a	; 10
+ 3ba:	90 64       	ori	r25, 0x40	; 64
+ 3bc:	9a b9       	out	0x0a, r25	; 10
+ 3be:	07 c0       	rjmp	.+14     	; 0x3ce <UART_init+0x54>
+ 3c0:	91 11       	cpse	r25, r1
+ 3c2:	04 c0       	rjmp	.+8      	; 0x3cc <UART_init+0x52>
+ 3c4:	9a b1       	in	r25, 0x0a	; 10
+ 3c6:	9f 7b       	andi	r25, 0xBF	; 191
+ 3c8:	9a b9       	out	0x0a, r25	; 10
+ 3ca:	01 c0       	rjmp	.+2      	; 0x3ce <UART_init+0x54>
+ 3cc:	82 e0       	ldi	r24, 0x02	; 2
+ 3ce:	90 91 6d 00 	lds	r25, 0x006D	; 0x80006d <cst_str_UART_config+0x3>
+ 3d2:	91 30       	cpi	r25, 0x01	; 1
+ 3d4:	21 f4       	brne	.+8      	; 0x3de <UART_init+0x64>
+ 3d6:	9a b1       	in	r25, 0x0a	; 10
+ 3d8:	90 61       	ori	r25, 0x10	; 16
+ 3da:	9a b9       	out	0x0a, r25	; 10
+ 3dc:	07 c0       	rjmp	.+14     	; 0x3ec <UART_init+0x72>
+ 3de:	91 11       	cpse	r25, r1
+ 3e0:	04 c0       	rjmp	.+8      	; 0x3ea <UART_init+0x70>
+ 3e2:	9a b1       	in	r25, 0x0a	; 10
+ 3e4:	9f 7e       	andi	r25, 0xEF	; 239
+ 3e6:	9a b9       	out	0x0a, r25	; 10
+ 3e8:	01 c0       	rjmp	.+2      	; 0x3ec <UART_init+0x72>
+ 3ea:	82 e0       	ldi	r24, 0x02	; 2
+ 3ec:	90 91 6f 00 	lds	r25, 0x006F	; 0x80006f <cst_str_UART_config+0x5>
+ 3f0:	91 30       	cpi	r25, 0x01	; 1
+ 3f2:	21 f4       	brne	.+8      	; 0x3fc <UART_init+0x82>
+ 3f4:	9a b1       	in	r25, 0x0a	; 10
+ 3f6:	98 60       	ori	r25, 0x08	; 8
+ 3f8:	9a b9       	out	0x0a, r25	; 10
+ 3fa:	07 c0       	rjmp	.+14     	; 0x40a <__EEPROM_REGION_LENGTH__+0xa>
+ 3fc:	91 11       	cpse	r25, r1
+ 3fe:	04 c0       	rjmp	.+8      	; 0x408 <__EEPROM_REGION_LENGTH__+0x8>
+ 400:	9a b1       	in	r25, 0x0a	; 10
+ 402:	97 7f       	andi	r25, 0xF7	; 247
+ 404:	9a b9       	out	0x0a, r25	; 10
+ 406:	01 c0       	rjmp	.+2      	; 0x40a <__EEPROM_REGION_LENGTH__+0xa>
+ 408:	82 e0       	ldi	r24, 0x02	; 2
+ 40a:	9b b1       	in	r25, 0x0b	; 11
+ 40c:	9d 7f       	andi	r25, 0xFD	; 253
+ 40e:	9b b9       	out	0x0b, r25	; 11
+ 410:	e0 91 6c 00 	lds	r30, 0x006C	; 0x80006c <cst_str_UART_config+0x2>
+ 414:	4e 2f       	mov	r20, r30
+ 416:	50 e0       	ldi	r21, 0x00	; 0
+ 418:	4c 30       	cpi	r20, 0x0C	; 12
+ 41a:	51 05       	cpc	r21, r1
+ 41c:	a8 f5       	brcc	.+106    	; 0x488 <__EEPROM_REGION_LENGTH__+0x88>
+ 41e:	fa 01       	movw	r30, r20
+ 420:	e6 5d       	subi	r30, 0xD6	; 214
+ 422:	ff 4f       	sbci	r31, 0xFF	; 255
+ 424:	0c 94 b6 05 	jmp	0xb6c	; 0xb6c <__tablejump2__>
+ 428:	9f ec       	ldi	r25, 0xCF	; 207
+ 42a:	99 b9       	out	0x09, r25	; 9
+ 42c:	10 bc       	out	0x20, r1	; 32
+ 42e:	2d c0       	rjmp	.+90     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 430:	97 e6       	ldi	r25, 0x67	; 103
+ 432:	99 b9       	out	0x09, r25	; 9
+ 434:	10 bc       	out	0x20, r1	; 32
+ 436:	29 c0       	rjmp	.+82     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 438:	93 e3       	ldi	r25, 0x33	; 51
+ 43a:	99 b9       	out	0x09, r25	; 9
+ 43c:	10 bc       	out	0x20, r1	; 32
+ 43e:	25 c0       	rjmp	.+74     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 440:	91 e2       	ldi	r25, 0x21	; 33
+ 442:	99 b9       	out	0x09, r25	; 9
+ 444:	10 bc       	out	0x20, r1	; 32
+ 446:	21 c0       	rjmp	.+66     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 448:	99 e1       	ldi	r25, 0x19	; 25
+ 44a:	99 b9       	out	0x09, r25	; 9
+ 44c:	10 bc       	out	0x20, r1	; 32
+ 44e:	1d c0       	rjmp	.+58     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 450:	90 e1       	ldi	r25, 0x10	; 16
+ 452:	99 b9       	out	0x09, r25	; 9
+ 454:	10 bc       	out	0x20, r1	; 32
+ 456:	19 c0       	rjmp	.+50     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 458:	9c e0       	ldi	r25, 0x0C	; 12
+ 45a:	99 b9       	out	0x09, r25	; 9
+ 45c:	10 bc       	out	0x20, r1	; 32
+ 45e:	15 c0       	rjmp	.+42     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 460:	97 e0       	ldi	r25, 0x07	; 7
+ 462:	99 b9       	out	0x09, r25	; 9
+ 464:	10 bc       	out	0x20, r1	; 32
+ 466:	11 c0       	rjmp	.+34     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 468:	95 e0       	ldi	r25, 0x05	; 5
+ 46a:	99 b9       	out	0x09, r25	; 9
+ 46c:	10 bc       	out	0x20, r1	; 32
+ 46e:	0d c0       	rjmp	.+26     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 470:	93 e0       	ldi	r25, 0x03	; 3
+ 472:	99 b9       	out	0x09, r25	; 9
+ 474:	10 bc       	out	0x20, r1	; 32
+ 476:	09 c0       	rjmp	.+18     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 478:	91 e0       	ldi	r25, 0x01	; 1
+ 47a:	99 b9       	out	0x09, r25	; 9
+ 47c:	10 bc       	out	0x20, r1	; 32
+ 47e:	05 c0       	rjmp	.+10     	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 480:	91 e0       	ldi	r25, 0x01	; 1
+ 482:	99 b9       	out	0x09, r25	; 9
+ 484:	10 bc       	out	0x20, r1	; 32
+ 486:	01 c0       	rjmp	.+2      	; 0x48a <__EEPROM_REGION_LENGTH__+0x8a>
+ 488:	82 e0       	ldi	r24, 0x02	; 2
+ 48a:	90 91 6b 00 	lds	r25, 0x006B	; 0x80006b <cst_str_UART_config+0x1>
+ 48e:	92 30       	cpi	r25, 0x02	; 2
+ 490:	69 f0       	breq	.+26     	; 0x4ac <__EEPROM_REGION_LENGTH__+0xac>
+ 492:	28 f4       	brcc	.+10     	; 0x49e <__EEPROM_REGION_LENGTH__+0x9e>
+ 494:	99 23       	and	r25, r25
+ 496:	41 f0       	breq	.+16     	; 0x4a8 <__EEPROM_REGION_LENGTH__+0xa8>
+ 498:	91 30       	cpi	r25, 0x01	; 1
+ 49a:	89 f0       	breq	.+34     	; 0x4be <__EEPROM_REGION_LENGTH__+0xbe>
+ 49c:	0d c0       	rjmp	.+26     	; 0x4b8 <__EEPROM_REGION_LENGTH__+0xb8>
+ 49e:	93 30       	cpi	r25, 0x03	; 3
+ 4a0:	39 f0       	breq	.+14     	; 0x4b0 <__EEPROM_REGION_LENGTH__+0xb0>
+ 4a2:	94 30       	cpi	r25, 0x04	; 4
+ 4a4:	39 f0       	breq	.+14     	; 0x4b4 <__EEPROM_REGION_LENGTH__+0xb4>
+ 4a6:	08 c0       	rjmp	.+16     	; 0x4b8 <__EEPROM_REGION_LENGTH__+0xb8>
+ 4a8:	90 e0       	ldi	r25, 0x00	; 0
+ 4aa:	0a c0       	rjmp	.+20     	; 0x4c0 <__EEPROM_REGION_LENGTH__+0xc0>
+ 4ac:	94 e0       	ldi	r25, 0x04	; 4
+ 4ae:	08 c0       	rjmp	.+16     	; 0x4c0 <__EEPROM_REGION_LENGTH__+0xc0>
+ 4b0:	96 e0       	ldi	r25, 0x06	; 6
+ 4b2:	06 c0       	rjmp	.+12     	; 0x4c0 <__EEPROM_REGION_LENGTH__+0xc0>
+ 4b4:	96 e0       	ldi	r25, 0x06	; 6
+ 4b6:	04 c0       	rjmp	.+8      	; 0x4c0 <__EEPROM_REGION_LENGTH__+0xc0>
+ 4b8:	90 e0       	ldi	r25, 0x00	; 0
+ 4ba:	82 e0       	ldi	r24, 0x02	; 2
+ 4bc:	01 c0       	rjmp	.+2      	; 0x4c0 <__EEPROM_REGION_LENGTH__+0xc0>
+ 4be:	92 e0       	ldi	r25, 0x02	; 2
+ 4c0:	81 11       	cpse	r24, r1
+ 4c2:	02 c0       	rjmp	.+4      	; 0x4c8 <__EEPROM_REGION_LENGTH__+0xc8>
+ 4c4:	90 68       	ori	r25, 0x80	; 128
+ 4c6:	90 bd       	out	0x20, r25	; 32
+ 4c8:	9f b7       	in	r25, 0x3f	; 63
+ 4ca:	90 68       	ori	r25, 0x80	; 128
+ 4cc:	9f bf       	out	0x3f, r25	; 63
+ 4ce:	08 95       	ret
+
+000004d0 <UART_isEmpty>:
+ 
+ enu_UART_bufferStatus_t UART_isEmpty (void)
+ {
+	 enu_UART_bufferStatus_t returnValue = UART_BUFFER_EMPTY;
+	 if (GET_BIT(UCSRA, UDRE) == UART_BUFFER_EMPTY)
+ 4d0:	5d 9b       	sbis	0x0b, 5	; 11
+ 4d2:	02 c0       	rjmp	.+4      	; 0x4d8 <UART_isEmpty+0x8>
+	 return returnValue;
+ }
+ 
+ enu_UART_bufferStatus_t UART_isEmpty (void)
+ {
+	 enu_UART_bufferStatus_t returnValue = UART_BUFFER_EMPTY;
+ 4d4:	81 e0       	ldi	r24, 0x01	; 1
+ 4d6:	08 95       	ret
+	 {
+		 /*BUFFER IS EMPTY*/
+	 }
+	 else
+	 {
+		 returnValue = UART_BUFFER_NEMPTY;
+ 4d8:	80 e0       	ldi	r24, 0x00	; 0
+	 }
+	 return returnValue;
+ }
+ 4da:	08 95       	ret
+
+000004dc <UART_sendByte>:
+ enu_UART_status_t UART_sendByte (uint8_t u8_a_byte)
+ {
+	 enu_UART_status_t returnValue = UART_OK;
+	 if (GET_BIT(UCSRA, UDRE) == UART_BUFFER_EMPTY)
+ 4dc:	5d 9b       	sbis	0x0b, 5	; 11
+ 4de:	03 c0       	rjmp	.+6      	; 0x4e6 <UART_sendByte+0xa>
+	 {
+		 UDR = u8_a_byte;
+ 4e0:	8c b9       	out	0x0c, r24	; 12
+	 }
+	 return returnValue;
+ }
+ enu_UART_status_t UART_sendByte (uint8_t u8_a_byte)
+ {
+	 enu_UART_status_t returnValue = UART_OK;
+ 4e2:	80 e0       	ldi	r24, 0x00	; 0
+ 4e4:	08 95       	ret
+	 {
+		 UDR = u8_a_byte;
+	 }
+	 else  
+	 {
+		 returnValue = UART_SENDING;
+ 4e6:	81 e0       	ldi	r24, 0x01	; 1
+	 } 
+	 return returnValue;
+ }
+ 4e8:	08 95       	ret
+
+000004ea <UART_receiveData>:
+ 
+enu_UART_status_t UART_receiveData(uint8_t** ptr_uint8_receivedData, uint16_t* uint16_dataSize)
+{
+	enu_UART_status_t returnValue = UART_OK;
+	*ptr_uint8_receivedData =  arr_g_recieveBuffer;
+ 4ea:	2c e8       	ldi	r18, 0x8C	; 140
+ 4ec:	30 e0       	ldi	r19, 0x00	; 0
+ 4ee:	fc 01       	movw	r30, r24
+ 4f0:	31 83       	std	Z+1, r19	; 0x01
+ 4f2:	20 83       	st	Z, r18
+	*uint16_dataSize = gluint16_dataSize;
+ 4f4:	80 91 8c 04 	lds	r24, 0x048C	; 0x80048c <gluint16_dataSize>
+ 4f8:	90 91 8d 04 	lds	r25, 0x048D	; 0x80048d <gluint16_dataSize+0x1>
+ 4fc:	fb 01       	movw	r30, r22
+ 4fe:	91 83       	std	Z+1, r25	; 0x01
+ 500:	80 83       	st	Z, r24
+	return returnValue;
+}
+ 502:	80 e0       	ldi	r24, 0x00	; 0
+ 504:	08 95       	ret
+
+00000506 <UART_setCallBack>:
+
+enu_UART_status_t UART_setCallBack (void (*ptr_func)(void))
+{
+	/*TO BE IMPLEMENTED*/
+	enu_UART_status_t returnValue = UART_OK;
+	if(NULL_PTR != ptr_func)
+ 506:	00 97       	sbiw	r24, 0x00	; 0
+ 508:	31 f0       	breq	.+12     	; 0x516 <UART_setCallBack+0x10>
+	{
+		glptr_callBackFunc = ptr_func;
+ 50a:	90 93 7c 00 	sts	0x007C, r25	; 0x80007c <glptr_callBackFunc+0x1>
+ 50e:	80 93 7b 00 	sts	0x007B, r24	; 0x80007b <glptr_callBackFunc>
+
+
+enu_UART_status_t UART_setCallBack (void (*ptr_func)(void))
+{
+	/*TO BE IMPLEMENTED*/
+	enu_UART_status_t returnValue = UART_OK;
+ 512:	80 e0       	ldi	r24, 0x00	; 0
+ 514:	08 95       	ret
+	{
+		glptr_callBackFunc = ptr_func;
+	}
+	else
+	{
+		returnValue = UART_NOK;
+ 516:	82 e0       	ldi	r24, 0x02	; 2
+	}
+	return returnValue;
+}
+ 518:	08 95       	ret
+
+0000051a <__vector_13>:
+  
+ 
+ ISR(USART_RXC_INT)
+ {
+ 51a:	1f 92       	push	r1
+ 51c:	0f 92       	push	r0
+ 51e:	0f b6       	in	r0, 0x3f	; 63
+ 520:	0f 92       	push	r0
+ 522:	11 24       	eor	r1, r1
+ 524:	2f 93       	push	r18
+ 526:	3f 93       	push	r19
+ 528:	4f 93       	push	r20
+ 52a:	5f 93       	push	r21
+ 52c:	6f 93       	push	r22
+ 52e:	7f 93       	push	r23
+ 530:	8f 93       	push	r24
+ 532:	9f 93       	push	r25
+ 534:	af 93       	push	r26
+ 536:	bf 93       	push	r27
+ 538:	ef 93       	push	r30
+ 53a:	ff 93       	push	r31
+	 static uint16_t counter = 0;
+	 static enu_UART_rcvMode_t receiveMode = UART_DATA_SIZE;
+	  
+	//LED_on(LED_1);
+	if (receiveMode == UART_DATA_SIZE)
+ 53c:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <receiveMode.1815>
+ 540:	81 11       	cpse	r24, r1
+ 542:	2a c0       	rjmp	.+84     	; 0x598 <__vector_13+0x7e>
+	{
+		if(counter == 0)
+ 544:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__data_end>
+ 548:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__data_end+0x1>
+ 54c:	00 97       	sbiw	r24, 0x00	; 0
+ 54e:	71 f4       	brne	.+28     	; 0x56c <__vector_13+0x52>
+		{
+			//LED_toggle(LED_1);
+			gluint16_dataSize = (UDR * 256);
+ 550:	2c b1       	in	r18, 0x0c	; 12
+ 552:	80 e0       	ldi	r24, 0x00	; 0
+ 554:	92 2f       	mov	r25, r18
+ 556:	90 93 8d 04 	sts	0x048D, r25	; 0x80048d <gluint16_dataSize+0x1>
+ 55a:	80 93 8c 04 	sts	0x048C, r24	; 0x80048c <gluint16_dataSize>
+			counter = 1;
+ 55e:	81 e0       	ldi	r24, 0x01	; 1
+ 560:	90 e0       	ldi	r25, 0x00	; 0
+ 562:	90 93 79 00 	sts	0x0079, r25	; 0x800079 <__data_end+0x1>
+ 566:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <__data_end>
+ 56a:	45 c0       	rjmp	.+138    	; 0x5f6 <__vector_13+0xdc>
+		}
+		else if (counter == 1)
+ 56c:	01 97       	sbiw	r24, 0x01	; 1
+ 56e:	09 f0       	breq	.+2      	; 0x572 <__vector_13+0x58>
+ 570:	42 c0       	rjmp	.+132    	; 0x5f6 <__vector_13+0xdc>
+		{
+			gluint16_dataSize += UDR;
+ 572:	2c b1       	in	r18, 0x0c	; 12
+ 574:	80 91 8c 04 	lds	r24, 0x048C	; 0x80048c <gluint16_dataSize>
+ 578:	90 91 8d 04 	lds	r25, 0x048D	; 0x80048d <gluint16_dataSize+0x1>
+ 57c:	82 0f       	add	r24, r18
+ 57e:	91 1d       	adc	r25, r1
+ 580:	90 93 8d 04 	sts	0x048D, r25	; 0x80048d <gluint16_dataSize+0x1>
+ 584:	80 93 8c 04 	sts	0x048C, r24	; 0x80048c <gluint16_dataSize>
+			receiveMode = UART_DATA;
+ 588:	81 e0       	ldi	r24, 0x01	; 1
+ 58a:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <receiveMode.1815>
+			counter = 0;
+ 58e:	10 92 79 00 	sts	0x0079, r1	; 0x800079 <__data_end+0x1>
+ 592:	10 92 78 00 	sts	0x0078, r1	; 0x800078 <__data_end>
+ 596:	2f c0       	rjmp	.+94     	; 0x5f6 <__vector_13+0xdc>
+		{
+			
+			/*DO NOTHING*/
+		}
+	}
+	else if (receiveMode == UART_DATA)
+ 598:	81 30       	cpi	r24, 0x01	; 1
+ 59a:	69 f5       	brne	.+90     	; 0x5f6 <__vector_13+0xdc>
+	{
+		
+		if(counter < gluint16_dataSize)
+ 59c:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__data_end>
+ 5a0:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__data_end+0x1>
+ 5a4:	20 91 8c 04 	lds	r18, 0x048C	; 0x80048c <gluint16_dataSize>
+ 5a8:	30 91 8d 04 	lds	r19, 0x048D	; 0x80048d <gluint16_dataSize+0x1>
+ 5ac:	82 17       	cp	r24, r18
+ 5ae:	93 07       	cpc	r25, r19
+ 5b0:	10 f5       	brcc	.+68     	; 0x5f6 <__vector_13+0xdc>
+		{
+			arr_g_recieveBuffer[counter] = UDR;
+ 5b2:	2c b1       	in	r18, 0x0c	; 12
+ 5b4:	fc 01       	movw	r30, r24
+ 5b6:	e4 57       	subi	r30, 0x74	; 116
+ 5b8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5ba:	20 83       	st	Z, r18
+			counter++;
+ 5bc:	01 96       	adiw	r24, 0x01	; 1
+ 5be:	90 93 79 00 	sts	0x0079, r25	; 0x800079 <__data_end+0x1>
+ 5c2:	80 93 78 00 	sts	0x0078, r24	; 0x800078 <__data_end>
+			if(counter == gluint16_dataSize)
+ 5c6:	20 91 8c 04 	lds	r18, 0x048C	; 0x80048c <gluint16_dataSize>
+ 5ca:	30 91 8d 04 	lds	r19, 0x048D	; 0x80048d <gluint16_dataSize+0x1>
+ 5ce:	82 17       	cp	r24, r18
+ 5d0:	93 07       	cpc	r25, r19
+ 5d2:	89 f4       	brne	.+34     	; 0x5f6 <__vector_13+0xdc>
+			{
+				
+				if (NULL_PTR != glptr_callBackFunc)
+ 5d4:	e0 91 7b 00 	lds	r30, 0x007B	; 0x80007b <glptr_callBackFunc>
+ 5d8:	f0 91 7c 00 	lds	r31, 0x007C	; 0x80007c <glptr_callBackFunc+0x1>
+ 5dc:	30 97       	sbiw	r30, 0x00	; 0
+ 5de:	09 f0       	breq	.+2      	; 0x5e2 <__vector_13+0xc8>
+				{
+					glptr_callBackFunc();
+ 5e0:	09 95       	icall
+				}
+				else
+				{
+					/*DO NOTHING*/
+				}
+				counter = 0;
+ 5e2:	10 92 79 00 	sts	0x0079, r1	; 0x800079 <__data_end+0x1>
+ 5e6:	10 92 78 00 	sts	0x0078, r1	; 0x800078 <__data_end>
+				gluint16_dataSize = 0;
+ 5ea:	10 92 8d 04 	sts	0x048D, r1	; 0x80048d <gluint16_dataSize+0x1>
+ 5ee:	10 92 8c 04 	sts	0x048C, r1	; 0x80048c <gluint16_dataSize>
+				receiveMode = UART_DATA_SIZE;
+ 5f2:	10 92 7a 00 	sts	0x007A, r1	; 0x80007a <receiveMode.1815>
+			/*DO NOTHING*/
+		}
+	}
+	 
+	 
+ }
+ 5f6:	ff 91       	pop	r31
+ 5f8:	ef 91       	pop	r30
+ 5fa:	bf 91       	pop	r27
+ 5fc:	af 91       	pop	r26
+ 5fe:	9f 91       	pop	r25
+ 600:	8f 91       	pop	r24
+ 602:	7f 91       	pop	r23
+ 604:	6f 91       	pop	r22
+ 606:	5f 91       	pop	r21
+ 608:	4f 91       	pop	r20
+ 60a:	3f 91       	pop	r19
+ 60c:	2f 91       	pop	r18
+ 60e:	0f 90       	pop	r0
+ 610:	0f be       	out	0x3f, r0	; 63
+ 612:	0f 90       	pop	r0
+ 614:	1f 90       	pop	r1
+ 616:	18 95       	reti
+
+00000618 <BCM_init>:
+				break;
+			}
+		}
+	}
+	return returnValue;	
+}
+ 618:	dc 01       	movw	r26, r24
+ 61a:	90 e0       	ldi	r25, 0x00	; 0
+ 61c:	80 e0       	ldi	r24, 0x00	; 0
+ 61e:	1f c0       	rjmp	.+62     	; 0x65e <BCM_init+0x46>
+ 620:	29 2f       	mov	r18, r25
+ 622:	30 e0       	ldi	r19, 0x00	; 0
+ 624:	f9 01       	movw	r30, r18
+ 626:	ee 0f       	add	r30, r30
+ 628:	ff 1f       	adc	r31, r31
+ 62a:	ef 58       	subi	r30, 0x8F	; 143
+ 62c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 62e:	50 81       	ld	r21, Z
+ 630:	4c 91       	ld	r20, X
+ 632:	54 13       	cpse	r21, r20
+ 634:	12 c0       	rjmp	.+36     	; 0x65a <BCM_init+0x42>
+ 636:	22 0f       	add	r18, r18
+ 638:	33 1f       	adc	r19, r19
+ 63a:	f9 01       	movw	r30, r18
+ 63c:	ef 58       	subi	r30, 0x8F	; 143
+ 63e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 640:	81 81       	ldd	r24, Z+1	; 0x01
+ 642:	81 11       	cpse	r24, r1
+ 644:	04 c0       	rjmp	.+8      	; 0x64e <BCM_init+0x36>
+ 646:	0e 94 bd 01 	call	0x37a	; 0x37a <UART_init>
+ 64a:	80 e0       	ldi	r24, 0x00	; 0
+ 64c:	08 95       	ret
+ 64e:	81 30       	cpi	r24, 0x01	; 1
+ 650:	49 f0       	breq	.+18     	; 0x664 <BCM_init+0x4c>
+ 652:	82 30       	cpi	r24, 0x02	; 2
+ 654:	49 f0       	breq	.+18     	; 0x668 <BCM_init+0x50>
+ 656:	81 e0       	ldi	r24, 0x01	; 1
+ 658:	08 95       	ret
+ 65a:	9f 5f       	subi	r25, 0xFF	; 255
+ 65c:	81 e0       	ldi	r24, 0x01	; 1
+ 65e:	93 30       	cpi	r25, 0x03	; 3
+ 660:	f8 f2       	brcs	.-66     	; 0x620 <BCM_init+0x8>
+ 662:	08 95       	ret
+ 664:	80 e0       	ldi	r24, 0x00	; 0
+ 666:	08 95       	ret
+ 668:	80 e0       	ldi	r24, 0x00	; 0
+ 66a:	08 95       	ret
+
+0000066c <BCM_send_n>:
+
+
+enu_BCM_status_t	BCM_send_n		(str_BCM_instance_t* ptr_str_BCM_instance)
+{
+ 66c:	ef 92       	push	r14
+ 66e:	ff 92       	push	r15
+ 670:	0f 93       	push	r16
+ 672:	1f 93       	push	r17
+ 674:	cf 93       	push	r28
+ 676:	df 93       	push	r29
+ 678:	dc 01       	movw	r26, r24
+	enu_BCM_busID_t busUsed = BCM_UART;
+	uint8_t sizeHigherByte = 0, sizeLowerByte = 0;
+	
+	sizeOfBuffer = sizeof(gluint8_data)/sizeof(gluint8_data[0]); 
+	
+	for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+ 67a:	90 e0       	ldi	r25, 0x00	; 0
+}
+
+
+enu_BCM_status_t	BCM_send_n		(str_BCM_instance_t* ptr_str_BCM_instance)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 67c:	10 e0       	ldi	r17, 0x00	; 0
+	enu_BCM_busID_t busUsed = BCM_UART;
+	uint8_t sizeHigherByte = 0, sizeLowerByte = 0;
+	
+	sizeOfBuffer = sizeof(gluint8_data)/sizeof(gluint8_data[0]); 
+	
+	for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+ 67e:	1c c0       	rjmp	.+56     	; 0x6b8 <BCM_send_n+0x4c>
+	{
+		returnValue = BCM_NOK;
+		if (cst_str_BCM_config[counter].dataID == ptr_str_BCM_instance->dataType)
+ 680:	29 2f       	mov	r18, r25
+ 682:	30 e0       	ldi	r19, 0x00	; 0
+ 684:	f9 01       	movw	r30, r18
+ 686:	ee 0f       	add	r30, r30
+ 688:	ff 1f       	adc	r31, r31
+ 68a:	ef 58       	subi	r30, 0x8F	; 143
+ 68c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 68e:	40 81       	ld	r20, Z
+ 690:	8c 91       	ld	r24, X
+ 692:	48 13       	cpse	r20, r24
+ 694:	0f c0       	rjmp	.+30     	; 0x6b4 <BCM_send_n+0x48>
+		{
+			if(cst_str_BCM_config[counter].busID == BCM_UART)
+ 696:	22 0f       	add	r18, r18
+ 698:	33 1f       	adc	r19, r19
+ 69a:	f9 01       	movw	r30, r18
+ 69c:	ef 58       	subi	r30, 0x8F	; 143
+ 69e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6a0:	81 81       	ldd	r24, Z+1	; 0x01
+ 6a2:	88 23       	and	r24, r24
+ 6a4:	69 f0       	breq	.+26     	; 0x6c0 <BCM_send_n+0x54>
+			{
+				returnValue = BCM_OK;
+				busUsed = BCM_UART;
+				break;
+			}
+			else if (cst_str_BCM_config[counter].busID == BCM_SPI)
+ 6a6:	81 30       	cpi	r24, 0x01	; 1
+ 6a8:	71 f0       	breq	.+28     	; 0x6c6 <BCM_send_n+0x5a>
+			{
+				returnValue = BCM_OK;
+				busUsed = BCM_SPI;
+				break;
+			}
+			else if (cst_str_BCM_config[counter].busID == BCM_I2C)
+ 6aa:	82 30       	cpi	r24, 0x02	; 2
+ 6ac:	79 f0       	breq	.+30     	; 0x6cc <BCM_send_n+0x60>
+
+enu_BCM_status_t	BCM_send_n		(str_BCM_instance_t* ptr_str_BCM_instance)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+	uint16_t sizeOfBuffer = 0, availableSize = 0;
+	enu_BCM_busID_t busUsed = BCM_UART;
+ 6ae:	00 e0       	ldi	r16, 0x00	; 0
+	
+	sizeOfBuffer = sizeof(gluint8_data)/sizeof(gluint8_data[0]); 
+	
+	for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+	{
+		returnValue = BCM_NOK;
+ 6b0:	11 e0       	ldi	r17, 0x01	; 1
+ 6b2:	0e c0       	rjmp	.+28     	; 0x6d0 <BCM_send_n+0x64>
+	enu_BCM_busID_t busUsed = BCM_UART;
+	uint8_t sizeHigherByte = 0, sizeLowerByte = 0;
+	
+	sizeOfBuffer = sizeof(gluint8_data)/sizeof(gluint8_data[0]); 
+	
+	for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+ 6b4:	9f 5f       	subi	r25, 0xFF	; 255
+	{
+		returnValue = BCM_NOK;
+ 6b6:	11 e0       	ldi	r17, 0x01	; 1
+	enu_BCM_busID_t busUsed = BCM_UART;
+	uint8_t sizeHigherByte = 0, sizeLowerByte = 0;
+	
+	sizeOfBuffer = sizeof(gluint8_data)/sizeof(gluint8_data[0]); 
+	
+	for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+ 6b8:	93 30       	cpi	r25, 0x03	; 3
+ 6ba:	10 f3       	brcs	.-60     	; 0x680 <BCM_send_n+0x14>
+
+enu_BCM_status_t	BCM_send_n		(str_BCM_instance_t* ptr_str_BCM_instance)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+	uint16_t sizeOfBuffer = 0, availableSize = 0;
+	enu_BCM_busID_t busUsed = BCM_UART;
+ 6bc:	00 e0       	ldi	r16, 0x00	; 0
+ 6be:	08 c0       	rjmp	.+16     	; 0x6d0 <BCM_send_n+0x64>
+		if (cst_str_BCM_config[counter].dataID == ptr_str_BCM_instance->dataType)
+		{
+			if(cst_str_BCM_config[counter].busID == BCM_UART)
+			{
+				returnValue = BCM_OK;
+				busUsed = BCM_UART;
+ 6c0:	00 e0       	ldi	r16, 0x00	; 0
+		returnValue = BCM_NOK;
+		if (cst_str_BCM_config[counter].dataID == ptr_str_BCM_instance->dataType)
+		{
+			if(cst_str_BCM_config[counter].busID == BCM_UART)
+			{
+				returnValue = BCM_OK;
+ 6c2:	10 e0       	ldi	r17, 0x00	; 0
+ 6c4:	05 c0       	rjmp	.+10     	; 0x6d0 <BCM_send_n+0x64>
+				break;
+			}
+			else if (cst_str_BCM_config[counter].busID == BCM_SPI)
+			{
+				returnValue = BCM_OK;
+				busUsed = BCM_SPI;
+ 6c6:	01 e0       	ldi	r16, 0x01	; 1
+				busUsed = BCM_UART;
+				break;
+			}
+			else if (cst_str_BCM_config[counter].busID == BCM_SPI)
+			{
+				returnValue = BCM_OK;
+ 6c8:	10 e0       	ldi	r17, 0x00	; 0
+ 6ca:	02 c0       	rjmp	.+4      	; 0x6d0 <BCM_send_n+0x64>
+				break;
+			}
+			else if (cst_str_BCM_config[counter].busID == BCM_I2C)
+			{
+				returnValue = BCM_OK;
+				busUsed = BCM_I2C;
+ 6cc:	02 e0       	ldi	r16, 0x02	; 2
+				busUsed = BCM_SPI;
+				break;
+			}
+			else if (cst_str_BCM_config[counter].busID == BCM_I2C)
+			{
+				returnValue = BCM_OK;
+ 6ce:	10 e0       	ldi	r17, 0x00	; 0
+				break;
+			}
+		}
+	}
+	
+	if (glsint16_rear < glsint16_front)
+ 6d0:	20 91 60 00 	lds	r18, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 6d4:	30 91 61 00 	lds	r19, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 6d8:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <glsint16_front>
+ 6dc:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <glsint16_front+0x1>
+ 6e0:	28 17       	cp	r18, r24
+ 6e2:	39 07       	cpc	r19, r25
+ 6e4:	4c f4       	brge	.+18     	; 0x6f8 <BCM_send_n+0x8c>
+	{
+		availableSize = sizeOfBuffer - (glsint16_rear + glsint16_front);
+ 6e6:	82 0f       	add	r24, r18
+ 6e8:	93 1f       	adc	r25, r19
+ 6ea:	20 e0       	ldi	r18, 0x00	; 0
+ 6ec:	32 e0       	ldi	r19, 0x02	; 2
+ 6ee:	a9 01       	movw	r20, r18
+ 6f0:	48 1b       	sub	r20, r24
+ 6f2:	59 0b       	sbc	r21, r25
+ 6f4:	ca 01       	movw	r24, r20
+ 6f6:	0f c0       	rjmp	.+30     	; 0x716 <BCM_send_n+0xaa>
+	}
+	else if (glsint16_rear > glsint16_front)	
+ 6f8:	82 17       	cp	r24, r18
+ 6fa:	93 07       	cpc	r25, r19
+ 6fc:	54 f4       	brge	.+20     	; 0x712 <BCM_send_n+0xa6>
+	{	
+		availableSize = sizeOfBuffer - (glsint16_rear - glsint16_front);
+ 6fe:	f9 01       	movw	r30, r18
+ 700:	e8 1b       	sub	r30, r24
+ 702:	f9 0b       	sbc	r31, r25
+ 704:	20 e0       	ldi	r18, 0x00	; 0
+ 706:	32 e0       	ldi	r19, 0x02	; 2
+ 708:	a9 01       	movw	r20, r18
+ 70a:	4e 1b       	sub	r20, r30
+ 70c:	5f 0b       	sbc	r21, r31
+ 70e:	ca 01       	movw	r24, r20
+ 710:	02 c0       	rjmp	.+4      	; 0x716 <BCM_send_n+0xaa>
+		
+	}
+	else
+	{
+		availableSize = sizeOfBuffer;
+ 712:	80 e0       	ldi	r24, 0x00	; 0
+ 714:	92 e0       	ldi	r25, 0x02	; 2
+	}
+	
+	if (availableSize > ptr_str_BCM_instance->dataSize)
+ 716:	11 96       	adiw	r26, 0x01	; 1
+ 718:	2d 91       	ld	r18, X+
+ 71a:	3c 91       	ld	r19, X
+ 71c:	12 97       	sbiw	r26, 0x02	; 2
+ 71e:	28 17       	cp	r18, r24
+ 720:	39 07       	cpc	r19, r25
+ 722:	08 f0       	brcs	.+2      	; 0x726 <BCM_send_n+0xba>
+ 724:	43 c0       	rjmp	.+134    	; 0x7ac <BCM_send_n+0x140>
+ 726:	7d 01       	movw	r14, r26
+	{
+		/*ENQUEUING BUS USED*/
+		QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, busUsed);
+ 728:	20 e0       	ldi	r18, 0x00	; 0
+ 72a:	32 e0       	ldi	r19, 0x02	; 2
+ 72c:	4e e8       	ldi	r20, 0x8E	; 142
+ 72e:	54 e0       	ldi	r21, 0x04	; 4
+ 730:	60 e6       	ldi	r22, 0x60	; 96
+ 732:	70 e0       	ldi	r23, 0x00	; 0
+ 734:	82 e6       	ldi	r24, 0x62	; 98
+ 736:	90 e0       	ldi	r25, 0x00	; 0
+ 738:	0e 94 20 05 	call	0xa40	; 0xa40 <QUEUE_enQueue>
+	
+		/*ENQUEUING DATA SIZE*/
+		sizeHigherByte = ptr_str_BCM_instance->dataSize/256;
+ 73c:	d7 01       	movw	r26, r14
+ 73e:	11 96       	adiw	r26, 0x01	; 1
+ 740:	cc 91       	ld	r28, X
+ 742:	11 97       	sbiw	r26, 0x01	; 1
+ 744:	12 96       	adiw	r26, 0x02	; 2
+ 746:	0c 91       	ld	r16, X
+		sizeLowerByte  = (uint8_t) ptr_str_BCM_instance->dataSize;
+		
+		QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, sizeHigherByte);
+ 748:	20 e0       	ldi	r18, 0x00	; 0
+ 74a:	32 e0       	ldi	r19, 0x02	; 2
+ 74c:	4e e8       	ldi	r20, 0x8E	; 142
+ 74e:	54 e0       	ldi	r21, 0x04	; 4
+ 750:	60 e6       	ldi	r22, 0x60	; 96
+ 752:	70 e0       	ldi	r23, 0x00	; 0
+ 754:	82 e6       	ldi	r24, 0x62	; 98
+ 756:	90 e0       	ldi	r25, 0x00	; 0
+ 758:	0e 94 20 05 	call	0xa40	; 0xa40 <QUEUE_enQueue>
+		QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, sizeLowerByte);
+ 75c:	0c 2f       	mov	r16, r28
+ 75e:	20 e0       	ldi	r18, 0x00	; 0
+ 760:	32 e0       	ldi	r19, 0x02	; 2
+ 762:	4e e8       	ldi	r20, 0x8E	; 142
+ 764:	54 e0       	ldi	r21, 0x04	; 4
+ 766:	60 e6       	ldi	r22, 0x60	; 96
+ 768:	70 e0       	ldi	r23, 0x00	; 0
+ 76a:	82 e6       	ldi	r24, 0x62	; 98
+ 76c:	90 e0       	ldi	r25, 0x00	; 0
+ 76e:	0e 94 20 05 	call	0xa40	; 0xa40 <QUEUE_enQueue>
+		
+		/*ENQUEING DATA*/
+		for(uint16_t counter = 0; counter < ptr_str_BCM_instance->dataSize; counter++)
+ 772:	c0 e0       	ldi	r28, 0x00	; 0
+ 774:	d0 e0       	ldi	r29, 0x00	; 0
+ 776:	13 c0       	rjmp	.+38     	; 0x79e <BCM_send_n+0x132>
+		{
+			QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, ptr_str_BCM_instance->data[counter]);
+ 778:	d7 01       	movw	r26, r14
+ 77a:	13 96       	adiw	r26, 0x03	; 3
+ 77c:	ed 91       	ld	r30, X+
+ 77e:	fc 91       	ld	r31, X
+ 780:	14 97       	sbiw	r26, 0x04	; 4
+ 782:	ec 0f       	add	r30, r28
+ 784:	fd 1f       	adc	r31, r29
+ 786:	00 81       	ld	r16, Z
+ 788:	20 e0       	ldi	r18, 0x00	; 0
+ 78a:	32 e0       	ldi	r19, 0x02	; 2
+ 78c:	4e e8       	ldi	r20, 0x8E	; 142
+ 78e:	54 e0       	ldi	r21, 0x04	; 4
+ 790:	60 e6       	ldi	r22, 0x60	; 96
+ 792:	70 e0       	ldi	r23, 0x00	; 0
+ 794:	82 e6       	ldi	r24, 0x62	; 98
+ 796:	90 e0       	ldi	r25, 0x00	; 0
+ 798:	0e 94 20 05 	call	0xa40	; 0xa40 <QUEUE_enQueue>
+		
+		QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, sizeHigherByte);
+		QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, sizeLowerByte);
+		
+		/*ENQUEING DATA*/
+		for(uint16_t counter = 0; counter < ptr_str_BCM_instance->dataSize; counter++)
+ 79c:	21 96       	adiw	r28, 0x01	; 1
+ 79e:	f7 01       	movw	r30, r14
+ 7a0:	81 81       	ldd	r24, Z+1	; 0x01
+ 7a2:	92 81       	ldd	r25, Z+2	; 0x02
+ 7a4:	c8 17       	cp	r28, r24
+ 7a6:	d9 07       	cpc	r29, r25
+ 7a8:	38 f3       	brcs	.-50     	; 0x778 <BCM_send_n+0x10c>
+ 7aa:	01 c0       	rjmp	.+2      	; 0x7ae <BCM_send_n+0x142>
+			QUEUE_enQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, ptr_str_BCM_instance->data[counter]);
+		}
+	}
+	else
+	{
+		returnValue = BCM_BUFFER_FULL;
+ 7ac:	13 e0       	ldi	r17, 0x03	; 3
+	}
+	return returnValue;	
+}
+ 7ae:	81 2f       	mov	r24, r17
+ 7b0:	df 91       	pop	r29
+ 7b2:	cf 91       	pop	r28
+ 7b4:	1f 91       	pop	r17
+ 7b6:	0f 91       	pop	r16
+ 7b8:	ff 90       	pop	r15
+ 7ba:	ef 90       	pop	r14
+ 7bc:	08 95       	ret
+
+000007be <BCM_dispatcher>:
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+ 7be:	0f 93       	push	r16
+ 7c0:	1f 93       	push	r17
+ 7c2:	cf 93       	push	r28
+ 7c4:	df 93       	push	r29
+ 7c6:	1f 92       	push	r1
+ 7c8:	cd b7       	in	r28, 0x3d	; 61
+ 7ca:	de b7       	in	r29, 0x3e	; 62
+	enu_BCM_status_t returnValue = BCM_OK;
+ 	static enu_BCM_dispatcherStatus_t enu_BCM_dispatcherStatus = BCM_DISPATCHER_DQ_BUS;
+	static uint16_t dataSize = 0, dataIndex = 0;
+	static uint8_t dataBusUsed = 0, sizeHigherByte = 0, sizeLowerByte = 0;
+	uint16_t sizeOfBuffer = 0;
+	uint8_t data = 0;
+ 7cc:	19 82       	std	Y+1, r1	; 0x01
+	
+	
+	sizeOfBuffer = sizeof(gluint8_data)/sizeof(gluint8_data[0]);
+	
+	if (QUEUE_NEMPTY == QUEUE_isEmpty(glsint16_front))	
+ 7ce:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <glsint16_front>
+ 7d2:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <glsint16_front+0x1>
+ 7d6:	0e 94 1a 05 	call	0xa34	; 0xa34 <QUEUE_isEmpty>
+ 7da:	82 30       	cpi	r24, 0x02	; 2
+ 7dc:	09 f0       	breq	.+2      	; 0x7e0 <BCM_dispatcher+0x22>
+ 7de:	c4 c0       	rjmp	.+392    	; 0x968 <__stack+0x109>
+	{	
+		switch (enu_BCM_dispatcherStatus)
+ 7e0:	80 91 84 00 	lds	r24, 0x0084	; 0x800084 <enu_BCM_dispatcherStatus.1863>
+ 7e4:	82 30       	cpi	r24, 0x02	; 2
+ 7e6:	e1 f1       	breq	.+120    	; 0x860 <__stack+0x1>
+ 7e8:	28 f4       	brcc	.+10     	; 0x7f4 <BCM_dispatcher+0x36>
+ 7ea:	88 23       	and	r24, r24
+ 7ec:	51 f0       	breq	.+20     	; 0x802 <__DATA_REGION_LENGTH__+0x2>
+ 7ee:	81 30       	cpi	r24, 0x01	; 1
+ 7f0:	a1 f0       	breq	.+40     	; 0x81a <__DATA_REGION_LENGTH__+0x1a>
+ 7f2:	bc c0       	rjmp	.+376    	; 0x96c <__stack+0x10d>
+ 7f4:	83 30       	cpi	r24, 0x03	; 3
+ 7f6:	09 f4       	brne	.+2      	; 0x7fa <BCM_dispatcher+0x3c>
+ 7f8:	5c c0       	rjmp	.+184    	; 0x8b2 <__stack+0x53>
+ 7fa:	84 30       	cpi	r24, 0x04	; 4
+ 7fc:	09 f4       	brne	.+2      	; 0x800 <__DATA_REGION_LENGTH__>
+ 7fe:	69 c0       	rjmp	.+210    	; 0x8d2 <__stack+0x73>
+ 800:	b5 c0       	rjmp	.+362    	; 0x96c <__stack+0x10d>
+		{
+			case BCM_DISPATCHER_DQ_BUS:
+			/*DEQUEUING DATA BUS*/
+			QUEUE_deQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, &dataBusUsed);
+ 802:	03 e8       	ldi	r16, 0x83	; 131
+ 804:	10 e0       	ldi	r17, 0x00	; 0
+ 806:	20 e0       	ldi	r18, 0x00	; 0
+ 808:	32 e0       	ldi	r19, 0x02	; 2
+ 80a:	4e e8       	ldi	r20, 0x8E	; 142
+ 80c:	54 e0       	ldi	r21, 0x04	; 4
+ 80e:	60 e6       	ldi	r22, 0x60	; 96
+ 810:	70 e0       	ldi	r23, 0x00	; 0
+ 812:	82 e6       	ldi	r24, 0x62	; 98
+ 814:	90 e0       	ldi	r25, 0x00	; 0
+ 816:	0e 94 5b 05 	call	0xab6	; 0xab6 <QUEUE_deQueue>
+			
+			case BCM_DISPATCHER_DQ_HSIZE:
+			switch(dataBusUsed)
+ 81a:	80 91 83 00 	lds	r24, 0x0083	; 0x800083 <dataBusUsed.1866>
+ 81e:	88 23       	and	r24, r24
+ 820:	29 f0       	breq	.+10     	; 0x82c <__DATA_REGION_LENGTH__+0x2c>
+ 822:	83 30       	cpi	r24, 0x03	; 3
+ 824:	08 f0       	brcs	.+2      	; 0x828 <__DATA_REGION_LENGTH__+0x28>
+ 826:	a4 c0       	rjmp	.+328    	; 0x970 <__stack+0x111>
+	return returnValue;	
+}
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 828:	80 e0       	ldi	r24, 0x00	; 0
+ 82a:	ab c0       	rjmp	.+342    	; 0x982 <__stack+0x123>
+			case BCM_DISPATCHER_DQ_HSIZE:
+			switch(dataBusUsed)
+			{
+				case BCM_UART:
+				/*DEQUEUING DATA SIZE*/
+				if (UART_BUFFER_EMPTY == UART_isEmpty())
+ 82c:	0e 94 68 02 	call	0x4d0	; 0x4d0 <UART_isEmpty>
+ 830:	81 30       	cpi	r24, 0x01	; 1
+ 832:	09 f0       	breq	.+2      	; 0x836 <__DATA_REGION_LENGTH__+0x36>
+ 834:	9f c0       	rjmp	.+318    	; 0x974 <__stack+0x115>
+				{
+					QUEUE_deQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, &sizeHigherByte);
+ 836:	02 e8       	ldi	r16, 0x82	; 130
+ 838:	10 e0       	ldi	r17, 0x00	; 0
+ 83a:	20 e0       	ldi	r18, 0x00	; 0
+ 83c:	32 e0       	ldi	r19, 0x02	; 2
+ 83e:	4e e8       	ldi	r20, 0x8E	; 142
+ 840:	54 e0       	ldi	r21, 0x04	; 4
+ 842:	60 e6       	ldi	r22, 0x60	; 96
+ 844:	70 e0       	ldi	r23, 0x00	; 0
+ 846:	82 e6       	ldi	r24, 0x62	; 98
+ 848:	90 e0       	ldi	r25, 0x00	; 0
+ 84a:	0e 94 5b 05 	call	0xab6	; 0xab6 <QUEUE_deQueue>
+					UART_sendByte(sizeHigherByte);
+ 84e:	80 91 82 00 	lds	r24, 0x0082	; 0x800082 <sizeHigherByte.1867>
+ 852:	0e 94 6e 02 	call	0x4dc	; 0x4dc <UART_sendByte>
+					enu_BCM_dispatcherStatus = BCM_DISPATCHER_DQ_LSIZE;
+ 856:	82 e0       	ldi	r24, 0x02	; 2
+ 858:	80 93 84 00 	sts	0x0084, r24	; 0x800084 <enu_BCM_dispatcherStatus.1863>
+	return returnValue;	
+}
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 85c:	80 e0       	ldi	r24, 0x00	; 0
+				if (UART_BUFFER_EMPTY == UART_isEmpty())
+				{
+					QUEUE_deQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, &sizeHigherByte);
+					UART_sendByte(sizeHigherByte);
+					enu_BCM_dispatcherStatus = BCM_DISPATCHER_DQ_LSIZE;
+					break;
+ 85e:	91 c0       	rjmp	.+290    	; 0x982 <__stack+0x123>
+				break;
+			}
+			break;
+			
+			case BCM_DISPATCHER_DQ_LSIZE:
+			switch(dataBusUsed)
+ 860:	80 91 83 00 	lds	r24, 0x0083	; 0x800083 <dataBusUsed.1866>
+ 864:	88 23       	and	r24, r24
+ 866:	21 f0       	breq	.+8      	; 0x870 <__stack+0x11>
+ 868:	83 30       	cpi	r24, 0x03	; 3
+ 86a:	d8 f4       	brcc	.+54     	; 0x8a2 <__stack+0x43>
+	return returnValue;	
+}
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 86c:	80 e0       	ldi	r24, 0x00	; 0
+ 86e:	1c c0       	rjmp	.+56     	; 0x8a8 <__stack+0x49>
+			case BCM_DISPATCHER_DQ_LSIZE:
+			switch(dataBusUsed)
+			{
+				case BCM_UART:
+				/*DEQUEUING DATA SIZE*/
+				if (UART_BUFFER_EMPTY == UART_isEmpty())
+ 870:	0e 94 68 02 	call	0x4d0	; 0x4d0 <UART_isEmpty>
+ 874:	81 30       	cpi	r24, 0x01	; 1
+ 876:	b9 f4       	brne	.+46     	; 0x8a6 <__stack+0x47>
+				{
+					QUEUE_deQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, &sizeLowerByte);
+ 878:	01 e8       	ldi	r16, 0x81	; 129
+ 87a:	10 e0       	ldi	r17, 0x00	; 0
+ 87c:	20 e0       	ldi	r18, 0x00	; 0
+ 87e:	32 e0       	ldi	r19, 0x02	; 2
+ 880:	4e e8       	ldi	r20, 0x8E	; 142
+ 882:	54 e0       	ldi	r21, 0x04	; 4
+ 884:	60 e6       	ldi	r22, 0x60	; 96
+ 886:	70 e0       	ldi	r23, 0x00	; 0
+ 888:	82 e6       	ldi	r24, 0x62	; 98
+ 88a:	90 e0       	ldi	r25, 0x00	; 0
+ 88c:	0e 94 5b 05 	call	0xab6	; 0xab6 <QUEUE_deQueue>
+					UART_sendByte(sizeLowerByte);
+ 890:	80 91 81 00 	lds	r24, 0x0081	; 0x800081 <sizeLowerByte.1868>
+ 894:	0e 94 6e 02 	call	0x4dc	; 0x4dc <UART_sendByte>
+					enu_BCM_dispatcherStatus = BCM_DISPATCHER_SIZE;
+ 898:	83 e0       	ldi	r24, 0x03	; 3
+ 89a:	80 93 84 00 	sts	0x0084, r24	; 0x800084 <enu_BCM_dispatcherStatus.1863>
+	return returnValue;	
+}
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 89e:	80 e0       	ldi	r24, 0x00	; 0
+				if (UART_BUFFER_EMPTY == UART_isEmpty())
+				{
+					QUEUE_deQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, &sizeLowerByte);
+					UART_sendByte(sizeLowerByte);
+					enu_BCM_dispatcherStatus = BCM_DISPATCHER_SIZE;
+					break;
+ 8a0:	03 c0       	rjmp	.+6      	; 0x8a8 <__stack+0x49>
+				case BCM_I2C:
+				/*TO BE IMPLEMENTED*/
+				break;
+				
+				default:
+				returnValue = BCM_NOK;
+ 8a2:	81 e0       	ldi	r24, 0x01	; 1
+ 8a4:	01 c0       	rjmp	.+2      	; 0x8a8 <__stack+0x49>
+	return returnValue;	
+}
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 8a6:	80 e0       	ldi	r24, 0x00	; 0
+				default:
+				returnValue = BCM_NOK;
+				break;
+				
+			}
+			if (BCM_DISPATCHER_SIZE == enu_BCM_dispatcherStatus)
+ 8a8:	90 91 84 00 	lds	r25, 0x0084	; 0x800084 <enu_BCM_dispatcherStatus.1863>
+ 8ac:	93 30       	cpi	r25, 0x03	; 3
+ 8ae:	09 f0       	breq	.+2      	; 0x8b2 <__stack+0x53>
+ 8b0:	68 c0       	rjmp	.+208    	; 0x982 <__stack+0x123>
+			{
+				break;
+			}
+			
+			case BCM_DISPATCHER_SIZE:
+			dataSize = (uint16_t) sizeHigherByte * 256 + sizeLowerByte;
+ 8b2:	80 91 82 00 	lds	r24, 0x0082	; 0x800082 <sizeHigherByte.1867>
+ 8b6:	90 e0       	ldi	r25, 0x00	; 0
+ 8b8:	98 2f       	mov	r25, r24
+ 8ba:	88 27       	eor	r24, r24
+ 8bc:	20 91 81 00 	lds	r18, 0x0081	; 0x800081 <sizeLowerByte.1868>
+ 8c0:	82 0f       	add	r24, r18
+ 8c2:	91 1d       	adc	r25, r1
+ 8c4:	90 93 80 00 	sts	0x0080, r25	; 0x800080 <dataSize.1864+0x1>
+ 8c8:	80 93 7f 00 	sts	0x007F, r24	; 0x80007f <dataSize.1864>
+			enu_BCM_dispatcherStatus = BCM_DISPATCHER_SENDING;
+ 8cc:	84 e0       	ldi	r24, 0x04	; 4
+ 8ce:	80 93 84 00 	sts	0x0084, r24	; 0x800084 <enu_BCM_dispatcherStatus.1863>
+			
+			case BCM_DISPATCHER_SENDING:
+			switch(dataBusUsed)
+ 8d2:	80 91 83 00 	lds	r24, 0x0083	; 0x800083 <dataBusUsed.1866>
+ 8d6:	81 11       	cpse	r24, r1
+ 8d8:	4f c0       	rjmp	.+158    	; 0x978 <__stack+0x119>
+			{
+				case BCM_UART:
+				/*DEQUEUING DATA SIZE*/
+				if (UART_BUFFER_EMPTY == UART_isEmpty())
+ 8da:	0e 94 68 02 	call	0x4d0	; 0x4d0 <UART_isEmpty>
+ 8de:	81 30       	cpi	r24, 0x01	; 1
+ 8e0:	09 f0       	breq	.+2      	; 0x8e4 <__stack+0x85>
+ 8e2:	4c c0       	rjmp	.+152    	; 0x97c <__stack+0x11d>
+				{
+					if(dataIndex < dataSize)
+ 8e4:	20 91 7d 00 	lds	r18, 0x007D	; 0x80007d <dataIndex.1865>
+ 8e8:	30 91 7e 00 	lds	r19, 0x007E	; 0x80007e <dataIndex.1865+0x1>
+ 8ec:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <dataSize.1864>
+ 8f0:	90 91 80 00 	lds	r25, 0x0080	; 0x800080 <dataSize.1864+0x1>
+ 8f4:	28 17       	cp	r18, r24
+ 8f6:	39 07       	cpc	r19, r25
+ 8f8:	c8 f4       	brcc	.+50     	; 0x92c <__stack+0xcd>
+					{
+						QUEUE_deQueue(&glsint16_front, &glsint16_rear, gluint8_data, sizeOfBuffer, &data);
+ 8fa:	8e 01       	movw	r16, r28
+ 8fc:	0f 5f       	subi	r16, 0xFF	; 255
+ 8fe:	1f 4f       	sbci	r17, 0xFF	; 255
+ 900:	20 e0       	ldi	r18, 0x00	; 0
+ 902:	32 e0       	ldi	r19, 0x02	; 2
+ 904:	4e e8       	ldi	r20, 0x8E	; 142
+ 906:	54 e0       	ldi	r21, 0x04	; 4
+ 908:	60 e6       	ldi	r22, 0x60	; 96
+ 90a:	70 e0       	ldi	r23, 0x00	; 0
+ 90c:	82 e6       	ldi	r24, 0x62	; 98
+ 90e:	90 e0       	ldi	r25, 0x00	; 0
+ 910:	0e 94 5b 05 	call	0xab6	; 0xab6 <QUEUE_deQueue>
+						UART_sendByte(data);
+ 914:	89 81       	ldd	r24, Y+1	; 0x01
+ 916:	0e 94 6e 02 	call	0x4dc	; 0x4dc <UART_sendByte>
+						dataIndex++;
+ 91a:	80 91 7d 00 	lds	r24, 0x007D	; 0x80007d <dataIndex.1865>
+ 91e:	90 91 7e 00 	lds	r25, 0x007E	; 0x80007e <dataIndex.1865+0x1>
+ 922:	01 96       	adiw	r24, 0x01	; 1
+ 924:	90 93 7e 00 	sts	0x007E, r25	; 0x80007e <dataIndex.1865+0x1>
+ 928:	80 93 7d 00 	sts	0x007D, r24	; 0x80007d <dataIndex.1865>
+					}
+					if (dataIndex == dataSize)
+ 92c:	20 91 7d 00 	lds	r18, 0x007D	; 0x80007d <dataIndex.1865>
+ 930:	30 91 7e 00 	lds	r19, 0x007E	; 0x80007e <dataIndex.1865+0x1>
+ 934:	80 91 7f 00 	lds	r24, 0x007F	; 0x80007f <dataSize.1864>
+ 938:	90 91 80 00 	lds	r25, 0x0080	; 0x800080 <dataSize.1864+0x1>
+ 93c:	28 17       	cp	r18, r24
+ 93e:	39 07       	cpc	r19, r25
+ 940:	f9 f4       	brne	.+62     	; 0x980 <__stack+0x121>
+					{
+						if(NULL_PTR != ptr_BCM_callBackFunc)
+ 942:	e0 91 85 00 	lds	r30, 0x0085	; 0x800085 <ptr_BCM_callBackFunc>
+ 946:	f0 91 86 00 	lds	r31, 0x0086	; 0x800086 <ptr_BCM_callBackFunc+0x1>
+ 94a:	30 97       	sbiw	r30, 0x00	; 0
+ 94c:	09 f0       	breq	.+2      	; 0x950 <__stack+0xf1>
+						{
+							ptr_BCM_callBackFunc();
+ 94e:	09 95       	icall
+						}
+						dataSize = 0;
+ 950:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <dataSize.1864+0x1>
+ 954:	10 92 7f 00 	sts	0x007F, r1	; 0x80007f <dataSize.1864>
+						dataIndex = 0;
+ 958:	10 92 7e 00 	sts	0x007E, r1	; 0x80007e <dataIndex.1865+0x1>
+ 95c:	10 92 7d 00 	sts	0x007D, r1	; 0x80007d <dataIndex.1865>
+						enu_BCM_dispatcherStatus = BCM_DISPATCHER_DQ_BUS;
+ 960:	10 92 84 00 	sts	0x0084, r1	; 0x800084 <enu_BCM_dispatcherStatus.1863>
+				returnValue = BCM_NOK;
+				break;
+				
+			}
+			default: 
+			returnValue = BCM_NOK;
+ 964:	81 e0       	ldi	r24, 0x01	; 1
+ 966:	0d c0       	rjmp	.+26     	; 0x982 <__stack+0x123>
+		}
+		
+	}
+	else 
+	{
+		returnValue = BCM_BUFFER_EMPTY;
+ 968:	82 e0       	ldi	r24, 0x02	; 2
+ 96a:	0b c0       	rjmp	.+22     	; 0x982 <__stack+0x123>
+				returnValue = BCM_NOK;
+				break;
+				
+			}
+			default: 
+			returnValue = BCM_NOK;
+ 96c:	81 e0       	ldi	r24, 0x01	; 1
+ 96e:	09 c0       	rjmp	.+18     	; 0x982 <__stack+0x123>
+				case BCM_I2C:
+				/*TO BE IMPLEMENTED*/
+				break;
+				
+				default:
+				returnValue = BCM_NOK;
+ 970:	81 e0       	ldi	r24, 0x01	; 1
+ 972:	07 c0       	rjmp	.+14     	; 0x982 <__stack+0x123>
+	return returnValue;	
+}
+
+enu_BCM_status_t	BCM_dispatcher	(void)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ 974:	80 e0       	ldi	r24, 0x00	; 0
+ 976:	05 c0       	rjmp	.+10     	; 0x982 <__stack+0x123>
+				returnValue = BCM_NOK;
+				break;
+				
+			}
+			default: 
+			returnValue = BCM_NOK;
+ 978:	81 e0       	ldi	r24, 0x01	; 1
+ 97a:	03 c0       	rjmp	.+6      	; 0x982 <__stack+0x123>
+ 97c:	81 e0       	ldi	r24, 0x01	; 1
+ 97e:	01 c0       	rjmp	.+2      	; 0x982 <__stack+0x123>
+ 980:	81 e0       	ldi	r24, 0x01	; 1
+	else 
+	{
+		returnValue = BCM_BUFFER_EMPTY;
+	}
+	return returnValue;	
+}
+ 982:	0f 90       	pop	r0
+ 984:	df 91       	pop	r29
+ 986:	cf 91       	pop	r28
+ 988:	1f 91       	pop	r17
+ 98a:	0f 91       	pop	r16
+ 98c:	08 95       	ret
+
+0000098e <BCM_receiveData>:
+
+enu_BCM_status_t BCM_receiveData(uint8_t** ptr_uint8_receivedData, uint16_t* uint16_dataSize)
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+	UART_receiveData(ptr_uint8_receivedData, uint16_dataSize);
+ 98e:	0e 94 75 02 	call	0x4ea	; 0x4ea <UART_receiveData>
+	
+	return returnValue;
+}
+ 992:	80 e0       	ldi	r24, 0x00	; 0
+ 994:	08 95       	ret
+
+00000996 <BCM_setCallBack>:
+
+enu_BCM_status_t BCM_setCallBack(str_BCM_instance_t* ptr_str_BCM_instance, void(*ptr_func) (void))
+{
+ 996:	dc 01       	movw	r26, r24
+	enu_BCM_status_t returnValue = BCM_OK;
+	
+	if (NULL_PTR != ptr_func)
+ 998:	61 15       	cp	r22, r1
+ 99a:	71 05       	cpc	r23, r1
+ 99c:	19 f5       	brne	.+70     	; 0x9e4 <BCM_setCallBack+0x4e>
+			}
+		}
+	}
+	else
+	{
+		returnValue = BCM_NOK;
+ 99e:	81 e0       	ldi	r24, 0x01	; 1
+ 9a0:	08 95       	ret
+	if (NULL_PTR != ptr_func)
+	{
+		for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+		{
+			returnValue = BCM_NOK;
+			if (cst_str_BCM_config[counter].dataID == ptr_str_BCM_instance->dataType)
+ 9a2:	29 2f       	mov	r18, r25
+ 9a4:	30 e0       	ldi	r19, 0x00	; 0
+ 9a6:	f9 01       	movw	r30, r18
+ 9a8:	ee 0f       	add	r30, r30
+ 9aa:	ff 1f       	adc	r31, r31
+ 9ac:	ef 58       	subi	r30, 0x8F	; 143
+ 9ae:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9b0:	50 81       	ld	r21, Z
+ 9b2:	4c 91       	ld	r20, X
+ 9b4:	54 13       	cpse	r21, r20
+ 9b6:	13 c0       	rjmp	.+38     	; 0x9de <BCM_setCallBack+0x48>
+			{
+				if(cst_str_BCM_config[counter].busID == BCM_UART)
+ 9b8:	22 0f       	add	r18, r18
+ 9ba:	33 1f       	adc	r19, r19
+ 9bc:	f9 01       	movw	r30, r18
+ 9be:	ef 58       	subi	r30, 0x8F	; 143
+ 9c0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9c2:	81 81       	ldd	r24, Z+1	; 0x01
+ 9c4:	81 11       	cpse	r24, r1
+ 9c6:	05 c0       	rjmp	.+10     	; 0x9d2 <BCM_setCallBack+0x3c>
+ 9c8:	cb 01       	movw	r24, r22
+				{
+					returnValue = BCM_OK;
+					UART_setCallBack(ptr_func);
+ 9ca:	0e 94 83 02 	call	0x506	; 0x506 <UART_setCallBack>
+			returnValue = BCM_NOK;
+			if (cst_str_BCM_config[counter].dataID == ptr_str_BCM_instance->dataType)
+			{
+				if(cst_str_BCM_config[counter].busID == BCM_UART)
+				{
+					returnValue = BCM_OK;
+ 9ce:	80 e0       	ldi	r24, 0x00	; 0
+					UART_setCallBack(ptr_func);
+					break;
+ 9d0:	08 95       	ret
+				}
+				else if (cst_str_BCM_config[counter].busID == BCM_SPI)
+ 9d2:	81 30       	cpi	r24, 0x01	; 1
+ 9d4:	61 f0       	breq	.+24     	; 0x9ee <BCM_setCallBack+0x58>
+				{
+					returnValue = BCM_OK;
+					/*SPI_init()*/
+					break;
+				}
+				else if (cst_str_BCM_config[counter].busID == BCM_I2C)
+ 9d6:	82 30       	cpi	r24, 0x02	; 2
+ 9d8:	61 f0       	breq	.+24     	; 0x9f2 <BCM_setCallBack+0x5c>
+	
+	if (NULL_PTR != ptr_func)
+	{
+		for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+		{
+			returnValue = BCM_NOK;
+ 9da:	81 e0       	ldi	r24, 0x01	; 1
+ 9dc:	08 95       	ret
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+	
+	if (NULL_PTR != ptr_func)
+	{
+		for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+ 9de:	9f 5f       	subi	r25, 0xFF	; 255
+		{
+			returnValue = BCM_NOK;
+ 9e0:	81 e0       	ldi	r24, 0x01	; 1
+ 9e2:	02 c0       	rjmp	.+4      	; 0x9e8 <BCM_setCallBack+0x52>
+ 9e4:	90 e0       	ldi	r25, 0x00	; 0
+ 9e6:	80 e0       	ldi	r24, 0x00	; 0
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+	
+	if (NULL_PTR != ptr_func)
+	{
+		for(uint8_t counter = 0; counter < BCM_NUMBER_OF_CHANNELS; counter++)
+ 9e8:	93 30       	cpi	r25, 0x03	; 3
+ 9ea:	d8 f2       	brcs	.-74     	; 0x9a2 <BCM_setCallBack+0xc>
+ 9ec:	08 95       	ret
+					UART_setCallBack(ptr_func);
+					break;
+				}
+				else if (cst_str_BCM_config[counter].busID == BCM_SPI)
+				{
+					returnValue = BCM_OK;
+ 9ee:	80 e0       	ldi	r24, 0x00	; 0
+ 9f0:	08 95       	ret
+					/*SPI_init()*/
+					break;
+				}
+				else if (cst_str_BCM_config[counter].busID == BCM_I2C)
+				{
+					returnValue = BCM_OK;
+ 9f2:	80 e0       	ldi	r24, 0x00	; 0
+	{
+		returnValue = BCM_NOK;
+	}
+	
+	return returnValue;
+}
+ 9f4:	08 95       	ret
+
+000009f6 <BCM_dataSentCallBack>:
+
+enu_BCM_status_t	BCM_dataSentCallBack	(void(*ptr_func) (void))
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+	if(NULL_PTR != ptr_func)
+ 9f6:	00 97       	sbiw	r24, 0x00	; 0
+ 9f8:	31 f0       	breq	.+12     	; 0xa06 <BCM_dataSentCallBack+0x10>
+	{
+		ptr_BCM_callBackFunc = ptr_func;
+ 9fa:	90 93 86 00 	sts	0x0086, r25	; 0x800086 <ptr_BCM_callBackFunc+0x1>
+ 9fe:	80 93 85 00 	sts	0x0085, r24	; 0x800085 <ptr_BCM_callBackFunc>
+	return returnValue;
+}
+
+enu_BCM_status_t	BCM_dataSentCallBack	(void(*ptr_func) (void))
+{
+	enu_BCM_status_t returnValue = BCM_OK;
+ a02:	80 e0       	ldi	r24, 0x00	; 0
+ a04:	08 95       	ret
+	{
+		ptr_BCM_callBackFunc = ptr_func;
+	}
+	else
+	{
+		returnValue = BCM_NOK;
+ a06:	81 e0       	ldi	r24, 0x01	; 1
+	}
+	return returnValue;
+ a08:	08 95       	ret
+
+00000a0a <QUEUE_isFull>:
+
+// Check if the queue is full
+enu_QUEUE_status_t QUEUE_isFull(sint16_t sint16_front, sint16_t sint16_rear, uint16_t uint16_queueSize) 
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NFULL;
+	if ((sint16_front == sint16_rear + 1) || (sint16_front == 0 && sint16_rear == uint16_queueSize - 1)) 
+ a0a:	9b 01       	movw	r18, r22
+ a0c:	2f 5f       	subi	r18, 0xFF	; 255
+ a0e:	3f 4f       	sbci	r19, 0xFF	; 255
+ a10:	28 17       	cp	r18, r24
+ a12:	39 07       	cpc	r19, r25
+ a14:	49 f0       	breq	.+18     	; 0xa28 <QUEUE_isFull+0x1e>
+ a16:	89 2b       	or	r24, r25
+ a18:	49 f4       	brne	.+18     	; 0xa2c <QUEUE_isFull+0x22>
+ a1a:	41 50       	subi	r20, 0x01	; 1
+ a1c:	51 09       	sbc	r21, r1
+ a1e:	46 17       	cp	r20, r22
+ a20:	57 07       	cpc	r21, r23
+ a22:	31 f0       	breq	.+12     	; 0xa30 <QUEUE_isFull+0x26>
+	}
+	else
+	{
+		/*QUEUE IS NOT FULL*/
+	}
+	return returnValue;
+ a24:	80 e0       	ldi	r24, 0x00	; 0
+ a26:	08 95       	ret
+enu_QUEUE_status_t QUEUE_isFull(sint16_t sint16_front, sint16_t sint16_rear, uint16_t uint16_queueSize) 
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NFULL;
+	if ((sint16_front == sint16_rear + 1) || (sint16_front == 0 && sint16_rear == uint16_queueSize - 1)) 
+	{
+		return returnValue = QUEUE_FULL;
+ a28:	81 e0       	ldi	r24, 0x01	; 1
+ a2a:	08 95       	ret
+	}
+	else
+	{
+		/*QUEUE IS NOT FULL*/
+	}
+	return returnValue;
+ a2c:	80 e0       	ldi	r24, 0x00	; 0
+ a2e:	08 95       	ret
+enu_QUEUE_status_t QUEUE_isFull(sint16_t sint16_front, sint16_t sint16_rear, uint16_t uint16_queueSize) 
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NFULL;
+	if ((sint16_front == sint16_rear + 1) || (sint16_front == 0 && sint16_rear == uint16_queueSize - 1)) 
+	{
+		return returnValue = QUEUE_FULL;
+ a30:	81 e0       	ldi	r24, 0x01	; 1
+	else
+	{
+		/*QUEUE IS NOT FULL*/
+	}
+	return returnValue;
+}
+ a32:	08 95       	ret
+
+00000a34 <QUEUE_isEmpty>:
+
+// Check if the queue is empty
+enu_QUEUE_status_t QUEUE_isEmpty(sint16_t sint16_front)
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NEMPTY;
+	if (sint16_front == -1) 
+ a34:	01 96       	adiw	r24, 0x01	; 1
+ a36:	11 f0       	breq	.+4      	; 0xa3c <QUEUE_isEmpty+0x8>
+}
+
+// Check if the queue is empty
+enu_QUEUE_status_t QUEUE_isEmpty(sint16_t sint16_front)
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NEMPTY;
+ a38:	82 e0       	ldi	r24, 0x02	; 2
+ a3a:	08 95       	ret
+	if (sint16_front == -1) 
+	{
+		returnValue = QUEUE_EMPTY;
+ a3c:	83 e0       	ldi	r24, 0x03	; 3
+	else
+	{
+		/*QUEUE IS NOT EMPTY*/
+	}
+	return returnValue;
+}
+ a3e:	08 95       	ret
+
+00000a40 <QUEUE_enQueue>:
+enu_QUEUE_status_t QUEUE_enQueue(	sint16_t*  sint16_front,
+									sint16_t*  sint16_rear,
+									uint8_t* ptr_uint8_queue,
+									uint16_t  uint16_queueSize,
+									uint8_t  uint8_element)
+{
+ a40:	8f 92       	push	r8
+ a42:	9f 92       	push	r9
+ a44:	af 92       	push	r10
+ a46:	bf 92       	push	r11
+ a48:	cf 92       	push	r12
+ a4a:	df 92       	push	r13
+ a4c:	ef 92       	push	r14
+ a4e:	ff 92       	push	r15
+ a50:	0f 93       	push	r16
+ a52:	cf 93       	push	r28
+ a54:	df 93       	push	r29
+ a56:	4c 01       	movw	r8, r24
+ a58:	eb 01       	movw	r28, r22
+ a5a:	7a 01       	movw	r14, r20
+ a5c:	69 01       	movw	r12, r18
+	enu_QUEUE_status_t returnValue = QUEUE_NFULL;
+	if (QUEUE_FULL == QUEUE_isFull(*sint16_front, *sint16_rear, uint16_queueSize))
+ a5e:	fc 01       	movw	r30, r24
+ a60:	a0 80       	ld	r10, Z
+ a62:	b1 80       	ldd	r11, Z+1	; 0x01
+ a64:	68 81       	ld	r22, Y
+ a66:	79 81       	ldd	r23, Y+1	; 0x01
+ a68:	a9 01       	movw	r20, r18
+ a6a:	c5 01       	movw	r24, r10
+ a6c:	0e 94 05 05 	call	0xa0a	; 0xa0a <QUEUE_isFull>
+ a70:	81 30       	cpi	r24, 0x01	; 1
+ a72:	a1 f0       	breq	.+40     	; 0xa9c <QUEUE_enQueue+0x5c>
+		/*QUEUE IS FULL*/
+		returnValue = QUEUE_FULL;
+	}
+	else 
+	{
+		if (-1 == *sint16_front) 
+ a74:	ab 20       	and	r10, r11
+ a76:	a0 94       	com	r10
+ a78:	19 f4       	brne	.+6      	; 0xa80 <QUEUE_enQueue+0x40>
+		{
+			*sint16_front = 0;
+ a7a:	f4 01       	movw	r30, r8
+ a7c:	11 82       	std	Z+1, r1	; 0x01
+ a7e:	10 82       	st	Z, r1
+		}
+		
+		*sint16_rear = (*sint16_rear + 1) % uint16_queueSize;
+ a80:	88 81       	ld	r24, Y
+ a82:	99 81       	ldd	r25, Y+1	; 0x01
+ a84:	01 96       	adiw	r24, 0x01	; 1
+ a86:	b6 01       	movw	r22, r12
+ a88:	0e 94 a2 05 	call	0xb44	; 0xb44 <__udivmodhi4>
+ a8c:	99 83       	std	Y+1, r25	; 0x01
+ a8e:	88 83       	st	Y, r24
+		ptr_uint8_queue[*sint16_rear] = uint8_element;
+ a90:	f7 01       	movw	r30, r14
+ a92:	e8 0f       	add	r30, r24
+ a94:	f9 1f       	adc	r31, r25
+ a96:	00 83       	st	Z, r16
+									sint16_t*  sint16_rear,
+									uint8_t* ptr_uint8_queue,
+									uint16_t  uint16_queueSize,
+									uint8_t  uint8_element)
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NFULL;
+ a98:	80 e0       	ldi	r24, 0x00	; 0
+ a9a:	01 c0       	rjmp	.+2      	; 0xa9e <QUEUE_enQueue+0x5e>
+	if (QUEUE_FULL == QUEUE_isFull(*sint16_front, *sint16_rear, uint16_queueSize))
+	{
+		/*QUEUE IS FULL*/
+		returnValue = QUEUE_FULL;
+ a9c:	81 e0       	ldi	r24, 0x01	; 1
+		
+		*sint16_rear = (*sint16_rear + 1) % uint16_queueSize;
+		ptr_uint8_queue[*sint16_rear] = uint8_element;
+	}
+	return returnValue;
+}
+ a9e:	df 91       	pop	r29
+ aa0:	cf 91       	pop	r28
+ aa2:	0f 91       	pop	r16
+ aa4:	ff 90       	pop	r15
+ aa6:	ef 90       	pop	r14
+ aa8:	df 90       	pop	r13
+ aaa:	cf 90       	pop	r12
+ aac:	bf 90       	pop	r11
+ aae:	af 90       	pop	r10
+ ab0:	9f 90       	pop	r9
+ ab2:	8f 90       	pop	r8
+ ab4:	08 95       	ret
+
+00000ab6 <QUEUE_deQueue>:
+enu_QUEUE_status_t QUEUE_deQueue(	sint16_t*  sint16_front,
+									sint16_t*  sint16_rear,
+									uint8_t* ptr_uint8_queue,
+									uint16_t  uint16_queueSize,
+									uint8_t* ptr_uint8_element)
+{
+ ab6:	8f 92       	push	r8
+ ab8:	9f 92       	push	r9
+ aba:	af 92       	push	r10
+ abc:	bf 92       	push	r11
+ abe:	cf 92       	push	r12
+ ac0:	df 92       	push	r13
+ ac2:	ef 92       	push	r14
+ ac4:	ff 92       	push	r15
+ ac6:	0f 93       	push	r16
+ ac8:	1f 93       	push	r17
+ aca:	cf 93       	push	r28
+ acc:	df 93       	push	r29
+ ace:	7c 01       	movw	r14, r24
+ ad0:	6b 01       	movw	r12, r22
+ ad2:	5a 01       	movw	r10, r20
+ ad4:	49 01       	movw	r8, r18
+	enu_QUEUE_status_t returnValue = QUEUE_NEMPTY;
+	if (QUEUE_EMPTY == QUEUE_isEmpty(*sint16_front)) 
+ ad6:	fc 01       	movw	r30, r24
+ ad8:	c0 81       	ld	r28, Z
+ ada:	d1 81       	ldd	r29, Z+1	; 0x01
+ adc:	ce 01       	movw	r24, r28
+ ade:	0e 94 1a 05 	call	0xa34	; 0xa34 <QUEUE_isEmpty>
+ ae2:	83 30       	cpi	r24, 0x03	; 3
+ ae4:	09 f1       	breq	.+66     	; 0xb28 <QUEUE_deQueue+0x72>
+		/*QUEUE IS EMPTY*/
+		returnValue = QUEUE_EMPTY;
+	} 
+	else 
+	{
+		*ptr_uint8_element = ptr_uint8_queue[*sint16_front];
+ ae6:	ca 0d       	add	r28, r10
+ ae8:	db 1d       	adc	r29, r11
+ aea:	88 81       	ld	r24, Y
+ aec:	f8 01       	movw	r30, r16
+ aee:	80 83       	st	Z, r24
+		if (*sint16_front == *sint16_rear) 
+ af0:	f7 01       	movw	r30, r14
+ af2:	80 81       	ld	r24, Z
+ af4:	91 81       	ldd	r25, Z+1	; 0x01
+ af6:	f6 01       	movw	r30, r12
+ af8:	20 81       	ld	r18, Z
+ afa:	31 81       	ldd	r19, Z+1	; 0x01
+ afc:	82 17       	cp	r24, r18
+ afe:	93 07       	cpc	r25, r19
+ b00:	51 f4       	brne	.+20     	; 0xb16 <QUEUE_deQueue+0x60>
+		{
+ 			/*Q has only one element, so we reset the
+ 			queue after dequeing it*/
+			*sint16_front = -1;
+ b02:	8f ef       	ldi	r24, 0xFF	; 255
+ b04:	9f ef       	ldi	r25, 0xFF	; 255
+ b06:	f7 01       	movw	r30, r14
+ b08:	91 83       	std	Z+1, r25	; 0x01
+ b0a:	80 83       	st	Z, r24
+			*sint16_rear = -1;
+ b0c:	f6 01       	movw	r30, r12
+ b0e:	91 83       	std	Z+1, r25	; 0x01
+ b10:	80 83       	st	Z, r24
+									sint16_t*  sint16_rear,
+									uint8_t* ptr_uint8_queue,
+									uint16_t  uint16_queueSize,
+									uint8_t* ptr_uint8_element)
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NEMPTY;
+ b12:	82 e0       	ldi	r24, 0x02	; 2
+ b14:	0a c0       	rjmp	.+20     	; 0xb2a <QUEUE_deQueue+0x74>
+			*sint16_front = -1;
+			*sint16_rear = -1;
+		}
+		else 
+		{
+			*sint16_front = (*sint16_front + 1) % uint16_queueSize;
+ b16:	01 96       	adiw	r24, 0x01	; 1
+ b18:	b4 01       	movw	r22, r8
+ b1a:	0e 94 a2 05 	call	0xb44	; 0xb44 <__udivmodhi4>
+ b1e:	f7 01       	movw	r30, r14
+ b20:	91 83       	std	Z+1, r25	; 0x01
+ b22:	80 83       	st	Z, r24
+									sint16_t*  sint16_rear,
+									uint8_t* ptr_uint8_queue,
+									uint16_t  uint16_queueSize,
+									uint8_t* ptr_uint8_element)
+{
+	enu_QUEUE_status_t returnValue = QUEUE_NEMPTY;
+ b24:	82 e0       	ldi	r24, 0x02	; 2
+ b26:	01 c0       	rjmp	.+2      	; 0xb2a <QUEUE_deQueue+0x74>
+	if (QUEUE_EMPTY == QUEUE_isEmpty(*sint16_front)) 
+	{
+		/*QUEUE IS EMPTY*/
+		returnValue = QUEUE_EMPTY;
+ b28:	83 e0       	ldi	r24, 0x03	; 3
+			*sint16_front = (*sint16_front + 1) % uint16_queueSize;
+		}
+		
+	}
+	return returnValue;
+ b2a:	df 91       	pop	r29
+ b2c:	cf 91       	pop	r28
+ b2e:	1f 91       	pop	r17
+ b30:	0f 91       	pop	r16
+ b32:	ff 90       	pop	r15
+ b34:	ef 90       	pop	r14
+ b36:	df 90       	pop	r13
+ b38:	cf 90       	pop	r12
+ b3a:	bf 90       	pop	r11
+ b3c:	af 90       	pop	r10
+ b3e:	9f 90       	pop	r9
+ b40:	8f 90       	pop	r8
+ b42:	08 95       	ret
+
+00000b44 <__udivmodhi4>:
+ b44:	aa 1b       	sub	r26, r26
+ b46:	bb 1b       	sub	r27, r27
+ b48:	51 e1       	ldi	r21, 0x11	; 17
+ b4a:	07 c0       	rjmp	.+14     	; 0xb5a <__udivmodhi4_ep>
+
+00000b4c <__udivmodhi4_loop>:
+ b4c:	aa 1f       	adc	r26, r26
+ b4e:	bb 1f       	adc	r27, r27
+ b50:	a6 17       	cp	r26, r22
+ b52:	b7 07       	cpc	r27, r23
+ b54:	10 f0       	brcs	.+4      	; 0xb5a <__udivmodhi4_ep>
+ b56:	a6 1b       	sub	r26, r22
+ b58:	b7 0b       	sbc	r27, r23
+
+00000b5a <__udivmodhi4_ep>:
+ b5a:	88 1f       	adc	r24, r24
+ b5c:	99 1f       	adc	r25, r25
+ b5e:	5a 95       	dec	r21
+ b60:	a9 f7       	brne	.-22     	; 0xb4c <__udivmodhi4_loop>
+ b62:	80 95       	com	r24
+ b64:	90 95       	com	r25
+ b66:	bc 01       	movw	r22, r24
+ b68:	cd 01       	movw	r24, r26
+ b6a:	08 95       	ret
+
+00000b6c <__tablejump2__>:
+ b6c:	ee 0f       	add	r30, r30
+ b6e:	ff 1f       	adc	r31, r31
+ b70:	05 90       	lpm	r0, Z+
+ b72:	f4 91       	lpm	r31, Z
+ b74:	e0 2d       	mov	r30, r0
+ b76:	09 94       	ijmp
+
+00000b78 <_exit>:
+ b78:	f8 94       	cli
+
+00000b7a <__stop_program>:
+ b7a:	ff cf       	rjmp	.-2      	; 0xb7a <__stop_program>
