@@ -68,7 +68,7 @@ enu_timer_error_t_ timer_init( void )
 	enu_timer_error_t_ enu_return_value = TIMER_OK;
 	uint8_t_ uint8_counter = 0;
 	
-	for (; uint8_counter < NUMBER_OF_TIMERS_USED; uint8_counter++)
+	for (;TRUE == (uint8_counter < NUMBER_OF_TIMERS_USED); uint8_counter++)
 	{
 		switch(str_timer_config[uint8_counter].enu_timerUsed)
 		{
@@ -551,7 +551,7 @@ enu_timer_error_t_ timer_set_callback(enu_timer_number_t_ enu_timer_used, void (
 
 ISR(TIM0_OVF_INT)
 {
-	if (gl_uint8_normalToPwm == 0	)
+	if (gl_uint8_normalToPwm == 0)
 	{
 		gl_uint32_timer0_OVF_counter ++;
 		if (gl_uint32_timer0_OVF_counter == gl_uint32_timer0_number_OVFs)

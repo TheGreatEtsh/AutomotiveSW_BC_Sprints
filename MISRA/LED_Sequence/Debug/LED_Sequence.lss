@@ -2481,7 +2481,7 @@ ISR(TIM0_OVF_INT)
      f32:	bf 93       	push	r27
      f34:	ef 93       	push	r30
      f36:	ff 93       	push	r31
-	if (gl_uint8_normalToPwm == 0	)
+	if (gl_uint8_normalToPwm == 0)
      f38:	80 91 7c 00 	lds	r24, 0x007C	; 0x80007c <gl_uint8_normalToPwm>
      f3c:	81 11       	cpse	r24, r1
      f3e:	3b c0       	rjmp	.+118    	; 0xfb6 <__vector_11+0xa0>
