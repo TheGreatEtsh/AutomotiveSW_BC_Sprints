@@ -1,26 +1,9 @@
-APP/app.d APP/app.o: ../APP/app.c ../APP/app.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../ECAUL/button/button.h ../MCAL/dio/dio_interface.h ../LIB/std.h \
- ../ECAUL/led/led_interface.h ../ECAUL/led/led_cfg.h
+APP/app.d APP/app.o: ../APP/app.c ../APP/app.h ../ECAUL/button/button.h \
+ ../MCAL/dio/dio_interface.h ../LIB/std.h ../ECAUL/led/led_interface.h \
+ ../ECAUL/led/led_cfg.h ../MCAL/timer/timer_interface.h \
+ ../LIB/interrupts.h ../LIB/bit_math.h ../MCAL/exi/extint.h
 
 ../APP/app.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 ../ECAUL/button/button.h:
 
@@ -31,3 +14,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../ECAUL/led/led_interface.h:
 
 ../ECAUL/led/led_cfg.h:
+
+../MCAL/timer/timer_interface.h:
+
+../LIB/interrupts.h:
+
+../LIB/bit_math.h:
+
+../MCAL/exi/extint.h:

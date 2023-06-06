@@ -39,7 +39,9 @@ SUBDIRS :=  \
 ../ECAUL/button \
 ../MCAL \
 ../LIB \
-../MCAL/dio
+../MCAL/dio \
+../MCAL/exi \
+../MCAL/timer
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -49,7 +51,10 @@ C_SRCS +=  \
 ../ECAUL/led/led_cfg.c \
 ../ECAUL/led/led_program.c \
 ../main.c \
-../MCAL/dio/dio_program.c
+../MCAL/dio/dio_program.c \
+../MCAL/exi/extint.c \
+../MCAL/timer/timer_cfg.c \
+../MCAL/timer/timer_program.c
 
 
 PREPROCESSING_SRCS += 
@@ -64,7 +69,10 @@ ECAUL/button/button.o \
 ECAUL/led/led_cfg.o \
 ECAUL/led/led_program.o \
 main.o \
-MCAL/dio/dio_program.o
+MCAL/dio/dio_program.o \
+MCAL/exi/extint.o \
+MCAL/timer/timer_cfg.o \
+MCAL/timer/timer_program.o
 
 OBJS_AS_ARGS +=  \
 APP/app.o \
@@ -72,7 +80,10 @@ ECAUL/button/button.o \
 ECAUL/led/led_cfg.o \
 ECAUL/led/led_program.o \
 main.o \
-MCAL/dio/dio_program.o
+MCAL/dio/dio_program.o \
+MCAL/exi/extint.o \
+MCAL/timer/timer_cfg.o \
+MCAL/timer/timer_program.o
 
 C_DEPS +=  \
 APP/app.d \
@@ -80,7 +91,10 @@ ECAUL/button/button.d \
 ECAUL/led/led_cfg.d \
 ECAUL/led/led_program.d \
 main.d \
-MCAL/dio/dio_program.d
+MCAL/dio/dio_program.d \
+MCAL/exi/extint.d \
+MCAL/timer/timer_cfg.d \
+MCAL/timer/timer_program.d
 
 C_DEPS_AS_ARGS +=  \
 APP/app.d \
@@ -88,7 +102,10 @@ ECAUL/button/button.d \
 ECAUL/led/led_cfg.d \
 ECAUL/led/led_program.d \
 main.d \
-MCAL/dio/dio_program.d
+MCAL/dio/dio_program.d \
+MCAL/exi/extint.d \
+MCAL/timer/timer_cfg.d \
+MCAL/timer/timer_program.d
 
 OUTPUT_FILE_PATH +=LED_Sequence.elf
 
@@ -107,42 +124,63 @@ LINKER_SCRIPT_DEP+=
 APP/app.o: ../APP/app.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 ECAUL/button/button.o: ../ECAUL/button/button.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 ECAUL/led/led_cfg.o: ../ECAUL/led/led_cfg.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 ECAUL/led/led_program.o: ../ECAUL/led/led_program.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 ./main.o: .././main.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
 MCAL/dio/dio_program.o: ../MCAL/dio/dio_program.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/exi/extint.o: ../MCAL/exi/extint.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/timer/timer_cfg.o: ../MCAL/timer/timer_cfg.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/timer/timer_program.o: ../MCAL/timer/timer_program.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I".." -I"../MCAL/dio" -I"../APP" -I"../LIB" -I"../ECAUL" -I"../MCAL" -I"../ECAUL/led" -I"../ECAUL/button" -I"../MCAL/timer" -I"../MCAL/exi"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\2.0.401\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
